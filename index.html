@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Mentor Labs — БАДы с доказательной научной базой</title>
+<meta name="description" content="Mentor Labs — бренд добавок только с доказательной научной базой. Creatine Monohydrate, L-Theanine, Витамин D3+K2.">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mentor Labs — БАДы с доказательной научной базой">
+<meta property="og:description" content="Creatine Monohydrate, L-Theanine, Витамин D3+K2. Государственная регистрация ЕАЭС. Доставка по России.">
+<meta property="og:image" content="product-creatine.png">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+:root{
+  --d-bg1:#0E0E14;
+  --d-bg2:#13131A;
+  --d-bg3:#18181F;
+  --d-bg4:#1E1E27;
+  --d-text:#F0F0F8;
+  --d-muted:#7070A0;
+  --d-border:rgba(255,255,255,.06);
+  --l-bg:#F4F4F9;
+  --l-bg2:#EBEBF3;
+  --l-card:#18181F;
+  --l-text:#0E0E14;
+  --l-muted:#50506A;
+  --blue:#3B82F6;
+  --blue2:#60A5FA;
+  --blue-a:rgba(59,130,246,.12);
+  --green:#22C55E;
+  --r:8px;
+}
+body{font-family:'Manrope',sans-serif;font-weight:400;line-height:1.75;overflow-x:hidden;background:var(--l-bg);color:var(--l-text);}
+p{margin-bottom:0;}
+a{text-decoration:none;color:inherit;}
+img{display:block;max-width:100%;}
+::-webkit-scrollbar{width:3px;}
+::-webkit-scrollbar-thumb{background:var(--blue);border-radius:2px;}
+
+/* UTILS */
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px;}
+.sec{padding:96px 0;}
+.sec-dark{background:var(--d-bg1);color:var(--d-text);}
+.sec-dark2{background:var(--d-bg2);color:var(--d-text);}
+.sec-light{background:var(--l-bg);color:var(--l-text);}
+.sec-light2{background:var(--l-bg2);color:var(--l-text);}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:none;cursor:pointer;font-family:'Manrope',sans-serif;font-weight:700;transition:all .2s;text-decoration:none;white-space:nowrap;border-radius:6px;letter-spacing:.01em;}
+.btn-primary{padding:13px 28px;background:var(--blue);color:#fff;font-size:14px;}
+.btn-primary:hover{background:var(--blue2);transform:translateY(-1px);box-shadow:0 6px 24px rgba(59,130,246,.4);}
+.btn-outline-dark{padding:12px 28px;background:transparent;color:var(--d-text);border:1.5px solid rgba(255,255,255,.18);font-size:14px;}
+.btn-outline-dark:hover{border-color:var(--blue);color:var(--blue);}
+.btn-outline-light{padding:12px 28px;background:transparent;color:var(--l-muted);border:1.5px solid rgba(14,14,20,.15);font-size:14px;}
+.btn-outline-light:hover{border-color:var(--blue);color:var(--blue);}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:4px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;}
+.pill-blue{background:var(--blue-a);color:var(--blue2);border:1px solid rgba(59,130,246,.2);}
+.pill-green{background:rgba(34,197,94,.1);color:var(--green);border:1px solid rgba(34,197,94,.2);}
+.sec-tag{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);margin-bottom:14px;display:block;}
+.sec-h2{font-size:clamp(32px,4.5vw,52px);font-weight:800;line-height:1.08;letter-spacing:-.02em;margin-bottom:20px;}
+.sec-h2-ghost{color:rgba(59,130,246,.22);display:inline;}
+.sec-h2-ghost-dark{color:rgba(240,240,248,.15);display:inline;}
+.sec-h2-solid{color:var(--blue);display:inline;}
+.sec-p{font-size:15px;line-height:1.95;max-width:560px;margin-bottom:14px;}
+.sec-p-light{color:var(--l-muted);}
+.sec-p-dark{color:#9090B8;}
+.rev-el{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
+.rev-el.in{opacity:1;transform:none;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:900;padding:14px 0;background:rgba(14,14,20,.98);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.05);transition:padding .3s;}
+nav.sc{padding:10px 0;}
+.nav-in{display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{display:flex;align-items:center;gap:10px;}
+.nav-logo-svg{height:42px;width:auto;object-fit:contain;}
+.nav-logo-t .m{font-size:17px;font-weight:800;line-height:1;color:#F0F0F8;letter-spacing:-.01em;}
+.nav-logo-t .l{font-size:14px;font-weight:700;line-height:1;color:var(--blue);}
+.nav-ul{display:flex;gap:24px;list-style:none;}
+.nav-ul a{font-size:13px;font-weight:600;color:#7070A0;transition:color .2s;position:relative;}
+.nav-ul a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--blue);transition:width .25s;}
+.nav-ul a:hover{color:#F0F0F8;}
+.nav-ul a:hover::after{width:100%;}
+.nav-r{display:flex;align-items:center;gap:10px;}
+.cart-btn{position:relative;background:none;border:none;cursor:pointer;padding:8px;color:#F0F0F8;transition:color .2s;}
+.cart-btn:hover{color:var(--blue);}
+.cart-btn svg{width:20px;height:20px;}
+.c-dot{position:absolute;top:3px;right:3px;background:var(--blue);color:#fff;border-radius:50%;width:16px;height:16px;font-size:9px;font-weight:800;display:none;align-items:center;justify-content:center;}
+.c-dot.on{display:flex;}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
+.burger span{display:block;width:20px;height:1.5px;background:#F0F0F8;border-radius:2px;transition:all .3s;}
+.burger.op span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+.burger.op span:nth-child(2){opacity:0;}
+.burger.op span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+.mob-menu{display:none;position:fixed;inset:0;z-index:850;background:rgba(14,14,20,.99);backdrop-filter:blur(20px);flex-direction:column;align-items:center;justify-content:center;gap:36px;}
+.mob-menu.op{display:flex;}
+.mob-menu a{font-size:clamp(26px,6vw,40px);font-weight:800;color:#F0F0F8;letter-spacing:-.02em;}
+.mob-menu a:hover{color:var(--blue);}
+
+/* HERO */
+#hero{position:relative;min-height:100vh;overflow:hidden;display:flex;align-items:center;justify-content:center;background:var(--d-bg1);}
+.hero-slides{position:absolute;inset:0;}
+.hero-slide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .8s ease;}
+.hero-slide.on{opacity:1;}
+.hero-glow{position:absolute;width:600px;height:600px;top:50%;left:50%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(59,130,246,.08) 0%,transparent 65%);pointer-events:none;}
+.hero-slide-img{width:clamp(220px,34vw,420px);object-fit:contain;filter:drop-shadow(0 32px 64px rgba(0,0,0,.7));animation:floatP 5s ease-in-out infinite;}
+@keyframes floatP{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.hero-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:10;width:42px;height:42px;border-radius:var(--r);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);color:#F0F0F8;font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;backdrop-filter:blur(8px);}
+.hero-arrow:hover{background:rgba(59,130,246,.2);border-color:var(--blue);}
+.arrow-l{left:28px;}.arrow-r{right:28px;}
+.hero-dots{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:10;}
+.hdot{width:6px;height:6px;border-radius:3px;background:rgba(255,255,255,.18);cursor:pointer;transition:all .3s;border:none;padding:0;}
+.hdot.on{background:var(--blue);width:20px;}
+.hero-label{position:absolute;bottom:72px;left:50%;transform:translateX(-50%);background:rgba(14,14,20,.92);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.07);border-radius:var(--r);padding:12px 24px;text-align:center;white-space:nowrap;z-index:10;}
+.hero-label h4{font-size:15px;font-weight:800;color:#F0F0F8;margin-bottom:2px;letter-spacing:-.01em;}
+.hero-label span{font-size:12px;color:#7070A0;font-weight:500;}
+
+/* BRAND */
+#brand{background:#1E1E1E;}
+.brand-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
+.brand-img-wrap{border-radius:12px;overflow:hidden;background:linear-gradient(135deg,var(--d-bg3),var(--d-bg4));border:1px solid rgba(255,255,255,.08);}
+.brand-img{width:100%;aspect-ratio:4/5;object-fit:contain;padding:28px;}
+.brand-img-caption{padding:16px 20px;background:var(--d-bg3);border-top:1px solid rgba(255,255,255,.05);}
+.brand-img-caption h5{font-size:13px;font-weight:700;color:#F0F0F8;margin-bottom:3px;letter-spacing:.02em;}
+.brand-img-caption p{font-size:12px;color:#7070A0;line-height:1.6;}
+.brand-pts{margin-top:28px;display:flex;flex-direction:column;gap:12px;}
+.bpt{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#B0B0C8;font-weight:500;line-height:1.8;}
+.bpt-c{color:var(--green);font-size:14px;flex-shrink:0;margin-top:2px;}
+.brand-btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px;}
+
+/* SGR */
+#sgr{background:var(--d-bg2);}
+.sgr-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+.sgr-pts{display:flex;flex-direction:column;gap:16px;margin:24px 0;}
+.sgr-pt{padding:16px 18px;background:var(--d-bg3);border-radius:var(--r);border-left:2px solid var(--blue);}
+.sgr-pt h5{font-size:14px;font-weight:700;color:#F0F0F8;margin-bottom:6px;letter-spacing:-.01em;}
+.sgr-pt p{font-size:13px;color:#7070A0;line-height:1.9;margin-top:8px;}
+.cert-wrap{border-radius:var(--r);overflow:hidden;border:1px solid rgba(255,255,255,.06);box-shadow:0 12px 48px rgba(0,0,0,.5);}
+.cert-wrap img{width:100%;display:block;}
+.cert-foot{padding:14px 18px;background:var(--d-bg3);border-top:1px solid rgba(255,255,255,.06);}
+.cert-foot strong{display:block;font-size:13px;font-weight:700;color:#F0F0F8;margin-bottom:3px;}
+.cert-foot span{font-size:12px;color:#7070A0;}
+
+/* VALUES */
+#values{background:var(--l-bg2);}
+.vals-hdr{text-align:center;margin-bottom:52px;}
+.vals-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.val-card{background:var(--d-bg3);border-radius:var(--r);padding:28px;border:1px solid rgba(255,255,255,.05);transition:border-color .3s,transform .3s;position:relative;overflow:hidden;}
+.val-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--blue),transparent);}
+.val-card:hover{border-color:rgba(59,130,246,.3);transform:translateY(-3px);}
+.val-n{font-size:10px;font-weight:800;letter-spacing:.18em;color:var(--blue);text-transform:uppercase;margin-bottom:12px;}
+.val-card h4{font-size:16px;font-weight:700;color:#F0F0F8;margin-bottom:10px;letter-spacing:-.01em;}
+.val-card p{font-size:13px;color:#7070A0;line-height:1.9;}
+.val-card p+p{margin-top:8px;}
+.val-full{grid-column:span 2;}
+
+/* CATALOG */
+#catalog{background:#0E0E14;}
+.cat-hdr{text-align:center;margin-bottom:52px;}
+.prods{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.prod{background:var(--d-bg2);border-radius:var(--r);overflow:hidden;border:1px solid rgba(255,255,255,.06);transition:all .3s;display:flex;flex-direction:column;cursor:pointer;position:relative;}
+.prod:hover{border-color:rgba(59,130,246,.35);transform:translateY(-5px);box-shadow:0 20px 60px rgba(0,0,0,.35);}
+.prod-ph{background:linear-gradient(160deg,var(--d-bg3) 0%,var(--d-bg4) 100%);padding:24px;display:flex;align-items:center;justify-content:center;position:relative;height:260px;}
+.prod-img{width:175px;height:205px;object-fit:contain;filter:drop-shadow(0 10px 24px rgba(0,0,0,.55));transition:transform .4s;}
+.prod:hover .prod-img{transform:scale(1.06);}
+.prod-img-lg{width:210px;height:240px;}
+.prod:hover .prod-img-lg{transform:scale(1.06);}
+.prod-badge{position:absolute;top:12px;left:12px;}
+.prod-body{padding:18px;flex:1;display:flex;flex-direction:column;}
+.prod-tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:10px;}
+.prod-tag{padding:3px 9px;background:rgba(59,130,246,.12);color:var(--blue2);border:1px solid rgba(59,130,246,.18);border-radius:4px;font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;}
+.prod-name{font-size:17px;font-weight:800;color:#F0F0F8;letter-spacing:-.02em;margin-bottom:4px;}
+.prod-vol{font-size:12px;color:#7070A0;margin-bottom:10px;font-weight:500;}
+.prod-desc{font-size:13px;color:#7070A0;line-height:1.7;flex:1;margin-bottom:14px;}
+.prod-pr-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+.prod-price{font-size:24px;font-weight:800;color:#F0F0F8;letter-spacing:-.02em;}
+.prod-price sub{font-size:14px;font-weight:600;}
+.prod-rating{font-size:12px;color:#7070A0;}
+.prod-btns{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.btn-cart{padding:11px 14px;background:var(--blue);color:#fff;border:none;border-radius:6px;font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:5px;}
+.btn-cart:hover{background:var(--blue2);}
+.btn-cart.ok{background:#16a34a;}
+.btn-info{padding:10px 14px;background:transparent;color:#7070A0;border:1.5px solid rgba(255,255,255,.1);border-radius:6px;font-family:'Manrope',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;}
+.btn-info:hover{border-color:var(--blue);color:var(--blue);}
+.prod-social{padding:10px 18px;border-top:1px solid rgba(255,255,255,.05);font-size:12px;color:#7070A0;}
+
+/* PRODUCT MODAL */
+.modal-ov{position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:1100;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(8px);}
+.modal-ov.on{opacity:1;pointer-events:all;}
+.modal-box{position:fixed;top:50%;left:50%;transform:translate(-50%,-44%);transition:transform .35s cubic-bezier(.4,0,.2,1),opacity .35s;opacity:0;width:min(680px,95vw);max-height:85vh;background:var(--d-bg2);border-radius:12px;overflow-y:auto;border:1px solid rgba(255,255,255,.06);box-shadow:0 32px 96px rgba(0,0,0,.7);}
+.modal-ov.on .modal-box{transform:translate(-50%,-50%);opacity:1;}
+.modal-img-wrap{background:linear-gradient(135deg,var(--d-bg3),var(--d-bg4));padding:32px;display:flex;align-items:center;justify-content:center;}
+.modal-img{width:200px;height:240px;object-fit:contain;filter:drop-shadow(0 12px 32px rgba(0,0,0,.5));}
+.modal-body{padding:28px;}
+.modal-body h3{font-size:22px;font-weight:800;color:#F0F0F8;margin-bottom:6px;letter-spacing:-.02em;}
+.modal-vol{font-size:13px;color:#7070A0;margin-bottom:16px;font-weight:500;}
+.modal-txt{font-size:14px;color:#9090B8;line-height:1.8;}
+.modal-txt p{margin-bottom:12px;}
+.modal-txt b{color:#F0F0F8;font-weight:700;}
+.modal-txt ul{padding-left:18px;margin-bottom:12px;}
+.modal-txt ul li{margin-bottom:6px;}
+.modal-price-row{display:flex;align-items:center;justify-content:space-between;margin:20px 0 16px;padding-top:16px;border-top:1px solid rgba(255,255,255,.06);}
+.modal-price{font-size:28px;font-weight:800;color:#F0F0F8;letter-spacing:-.02em;}
+.modal-btns{display:flex;gap:10px;flex-wrap:wrap;}
+.modal-close{position:absolute;top:16px;right:16px;background:rgba(255,255,255,.07);border:none;border-radius:6px;width:36px;height:36px;color:#F0F0F8;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;z-index:10;}
+.modal-close:hover{background:rgba(255,255,255,.14);}
+
+/* BUNDLES */
+#bundles{background:var(--d-bg1);}
+.bundles-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.bundle{background:var(--d-bg3);border-radius:var(--r);padding:28px;border:1px solid rgba(59,130,246,.15);position:relative;overflow:hidden;}
+.bundle::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--blue),var(--blue2));}
+.b-save{position:absolute;top:18px;right:18px;background:rgba(34,197,94,.1);color:var(--green);border:1px solid rgba(34,197,94,.2);border-radius:4px;padding:3px 10px;font-size:11px;font-weight:700;}
+.b-items{display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap;}
+.b-pill{background:var(--d-bg4);border-radius:6px;padding:7px 12px;font-size:13px;font-weight:700;color:#F0F0F8;}
+.b-plus{color:#7070A0;font-size:18px;}
+.b-desc{font-size:13px;color:#7070A0;line-height:1.65;margin-bottom:14px;}
+.b-prices{display:flex;align-items:baseline;gap:10px;margin-bottom:16px;}
+.b-new{font-size:26px;font-weight:800;color:#F0F0F8;letter-spacing:-.02em;}
+.b-old{font-size:15px;color:#7070A0;text-decoration:line-through;}
+.b-btn{width:100%;padding:12px;background:var(--blue);color:#fff;border:none;border-radius:6px;font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;cursor:pointer;transition:background .2s;}
+.b-btn:hover{background:var(--blue2);}
+
+/* REVIEWS */
+#reviews{background:var(--l-bg2);}
+.rev-hdr{text-align:center;margin-bottom:48px;}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px;}
+.rev-card{background:var(--d-bg3);border-radius:var(--r);overflow:hidden;border:1px solid rgba(255,255,255,.05);}
+.rev-photo{width:100%;height:auto;display:block;object-fit:contain;background:#111827;}
+.rev-body{padding:18px;}
+.rev-top{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.rev-ava{width:34px;height:34px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;flex-shrink:0;color:#fff;}
+.rev-name{font-size:13px;font-weight:700;color:#F0F0F8;}
+.rev-city{font-size:11px;color:#7070A0;}
+.rev-stars{color:#FBBF24;font-size:12px;margin-bottom:8px;}
+.rev-text{font-size:13px;color:#9090B8;line-height:1.9;}
+.rev-prod{margin-top:10px;font-size:12px;color:var(--blue2);font-weight:600;}
+.rev-no-photo .rev-body{padding:22px;}
+.rev-link{text-align:center;}
+.rev-link a{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--blue);border:1.5px solid rgba(59,130,246,.2);padding:11px 26px;border-radius:6px;transition:all .2s;}
+.rev-link a:hover{background:rgba(59,130,246,.07);}
+
+/* SCIENCE */
+#science{background:var(--d-bg1);}
+.sci-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.sci-card{background:var(--d-bg3);border-radius:var(--r);overflow:hidden;border:1px solid rgba(255,255,255,.05);transition:border-color .3s;display:flex;flex-direction:column;}
+.sci-card:hover{border-color:rgba(59,130,246,.25);}
+.sci-top{background:linear-gradient(135deg,var(--d-bg4),var(--d-bg3));padding:28px;display:flex;align-items:center;justify-content:center;font-size:48px;min-height:110px;}
+.sci-first .sci-top{min-height:170px;font-size:60px;}
+.sci-body{padding:18px;flex:1;display:flex;flex-direction:column;gap:8px;}
+.sci-body h4{font-size:14px;font-weight:700;color:#F0F0F8;margin-bottom:8px;line-height:1.3;}
+.sci-body p{font-size:13px;color:#7070A0;line-height:1.85;margin-bottom:14px;}
+.sci-effs{display:flex;flex-direction:column;gap:5px;margin-bottom:12px;}
+.sci-ef{font-size:13px;color:#7070A0;display:flex;align-items:center;gap:7px;}
+.sci-ef::before{content:'✓';color:var(--green);font-weight:800;flex-shrink:0;}
+.sci-link{display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--blue);}
+.sci-link:hover{color:var(--blue2);}
+.sci-first{grid-row:span 2;}
+
+/* CTA */
+#contacts{background:var(--d-bg2);}
+.cta-box{background:linear-gradient(135deg,rgba(59,130,246,.09),rgba(59,130,246,.02));border:1px solid rgba(59,130,246,.18);border-radius:12px;padding:64px;text-align:center;position:relative;overflow:hidden;}
+.cta-box::after{content:'';position:absolute;top:-80px;right:-80px;width:240px;height:240px;background:radial-gradient(circle,rgba(59,130,246,.1),transparent 60%);pointer-events:none;}
+.cta-box h2{font-size:clamp(28px,4vw,44px);font-weight:800;color:#F0F0F8;letter-spacing:-.02em;margin-bottom:12px;}
+.cta-box p{font-size:15px;color:#7070A0;max-width:440px;margin:0 auto 32px;line-height:1.8;}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;}
+.cta-cs{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;}
+.cta-c{font-size:13px;color:#7070A0;display:flex;align-items:center;gap:5px;}
+.cta-c a{color:var(--blue2);font-weight:600;}
+.cta-c a:hover{color:var(--blue);}
+
+/* FOOTER */
+footer{background:var(--d-bg1);border-top:1px solid rgba(255,255,255,.05);padding:56px 0 24px;}
+.ft-top{display:grid;grid-template-columns:2fr 1fr 1.5fr 1.5fr;gap:36px;margin-bottom:40px;}
+.ft-about p{font-size:13px;color:#7070A0;line-height:1.75;margin-top:12px;max-width:220px;}
+.ft-col h5{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#444460;margin-bottom:16px;}
+.ft-col ul{list-style:none;display:flex;flex-direction:column;gap:9px;}
+.ft-col ul li a{font-size:13px;color:#7070A0;transition:color .2s;font-weight:500;}
+.ft-col ul li a:hover{color:#F0F0F8;}
+.ft-bot{border-top:1px solid rgba(255,255,255,.05);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.ft-bot span{font-size:12px;color:#444460;}
+.ft-soc{display:flex;gap:8px;}
+.ft-soc a{width:32px;height:32px;border-radius:6px;background:var(--d-bg3);border:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;font-size:14px;transition:all .2s;}
+.ft-soc a:hover{border-color:var(--blue);background:rgba(59,130,246,.1);}
+
+/* CART */
+.cart-ov{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:1000;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(4px);}
+.cart-ov.on{opacity:1;pointer-events:all;}
+.cart-side{position:fixed;top:0;right:0;bottom:0;width:min(380px,100vw);background:var(--d-bg2);z-index:1001;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;border-left:1px solid rgba(255,255,255,.06);}
+.cart-side.on{transform:translateX(0);}
+.cart-hdr{padding:20px;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:space-between;}
+.cart-hdr h3{font-size:17px;font-weight:800;color:#F0F0F8;letter-spacing:-.01em;}
+.cart-x{background:none;border:none;color:#7070A0;font-size:20px;cursor:pointer;transition:color .2s;}
+.cart-x:hover{color:#F0F0F8;}
+.cart-items{flex:1;overflow-y:auto;padding:12px;}
+.cart-empty{text-align:center;padding:56px 20px;color:#7070A0;}
+.cart-empty .ei{font-size:40px;margin-bottom:12px;opacity:.25;}
+.ci{display:flex;gap:11px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.05);}
+.ci:last-child{border-bottom:none;}
+.ci-img{width:50px;height:50px;background:var(--d-bg3);border-radius:6px;overflow:hidden;flex-shrink:0;}
+.ci-img img{width:100%;height:100%;object-fit:cover;}
+.ci-info{flex:1;}
+.ci-info h5{font-size:13px;font-weight:700;color:#F0F0F8;margin-bottom:3px;}
+.ci-info span{font-size:12px;color:#7070A0;}
+.ci-ctrl{display:flex;align-items:center;gap:7px;margin-top:7px;}
+.qb{width:24px;height:24px;border-radius:5px;background:var(--d-bg4);border:1px solid rgba(255,255,255,.06);color:#F0F0F8;font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;}
+.qb:hover{border-color:var(--blue);}
+.qn{font-size:13px;font-weight:700;color:#F0F0F8;min-width:16px;text-align:center;}
+.ci-rm{background:none;border:none;color:#7070A0;cursor:pointer;margin-left:auto;transition:color .2s;font-size:14px;}
+.ci-rm:hover{color:#ef4444;}
+.cart-ft{padding:16px 20px;border-top:1px solid rgba(255,255,255,.06);}
+.cart-tot{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;}
+.cart-tot span{font-size:14px;color:#7070A0;}
+.cart-tot strong{font-size:22px;font-weight:800;color:#F0F0F8;letter-spacing:-.01em;}
+.cart-ck{width:100%;margin-bottom:8px;}
+.cart-mgr{width:100%;padding:10px;background:transparent;border:1.5px solid rgba(255,255,255,.1);color:#7070A0;border-radius:6px;font-family:'Manrope',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;}
+.cart-mgr:hover{border-color:var(--blue);color:var(--blue);}
+.cart-note{text-align:center;font-size:11px;color:#444460;margin-top:8px;line-height:1.5;}
+
+/* STICKY */
+.sticky{position:fixed;bottom:0;left:0;right:0;z-index:500;background:rgba(14,14,20,.98);backdrop-filter:blur(16px);border-top:1px solid rgba(255,255,255,.06);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;transform:translateY(100%);transition:transform .35s;}
+.sticky.on{transform:translateY(0);}
+.st-l h4{font-size:14px;font-weight:800;color:#F0F0F8;letter-spacing:-.01em;}
+.st-l span{font-size:12px;color:#7070A0;}
+.st-price{font-size:22px;font-weight:800;color:var(--blue);letter-spacing:-.02em;}
+
+/* GRID PATTERN */
+.grid-pattern{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:48px 48px;pointer-events:none;}
+
+/* ================================
+   CHECKOUT MODAL
+================================ */
+.co-ov{position:fixed;inset:0;background:rgba(0,0,0,.82);z-index:1200;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;padding:16px;}
+.co-ov.on{opacity:1;pointer-events:all;}
+.co-box{background:var(--d-bg2);border-radius:12px;width:min(560px,100%);max-height:90vh;overflow-y:auto;border:1px solid rgba(255,255,255,.07);box-shadow:0 32px 96px rgba(0,0,0,.7);position:relative;transform:translateY(20px);transition:transform .35s cubic-bezier(.4,0,.2,1);}
+.co-ov.on .co-box{transform:translateY(0);}
+.co-head{padding:28px 28px 0;}
+.co-head .sec-tag{display:block;margin-bottom:6px;}
+.co-head h3{font-size:22px;font-weight:800;color:#F0F0F8;letter-spacing:-.02em;margin-bottom:20px;}
+.co-close{position:absolute;top:16px;right:16px;background:rgba(255,255,255,.07);border:none;border-radius:6px;width:34px;height:34px;color:#F0F0F8;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;z-index:10;}
+.co-close:hover{background:rgba(255,255,255,.14);}
+.co-order{background:var(--d-bg3);border-radius:var(--r);padding:16px 20px;margin:0 28px 20px;border:1px solid rgba(255,255,255,.06);}
+.co-item{display:flex;justify-content:space-between;align-items:center;font-size:13px;padding:5px 0;}
+.co-item:not(:last-child){border-bottom:1px solid rgba(255,255,255,.05);}
+.co-item span:first-child{color:#F0F0F8;font-weight:500;}
+.co-item span:last-child{color:#F0F0F8;font-weight:700;}
+.co-total{display:flex;justify-content:space-between;align-items:center;padding-top:10px;margin-top:6px;border-top:1px solid rgba(255,255,255,.07);}
+.co-total span{font-size:13px;color:#7070A0;}
+.co-total strong{font-size:20px;font-weight:800;color:var(--blue);letter-spacing:-.01em;}
+.co-form{padding:0 28px 28px;}
+.co-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.co-field{margin-bottom:14px;}
+.co-field label{display:block;font-size:12px;font-weight:600;color:#7070A0;margin-bottom:6px;letter-spacing:.04em;text-transform:uppercase;}
+.co-field input,.co-field select{width:100%;padding:11px 14px;background:var(--d-bg3);border:1.5px solid rgba(255,255,255,.08);border-radius:6px;color:#F0F0F8;font-family:'Manrope',sans-serif;font-size:14px;font-weight:500;transition:border-color .2s;outline:none;}
+.co-field input::placeholder{color:#444460;}
+.co-field input:focus,.co-field select:focus{border-color:var(--blue);}
+.co-field select{cursor:pointer;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237070A0' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;}
+.co-field select option{background:var(--d-bg3);color:#F0F0F8;}
+.co-payment-opts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px;}
+.co-popt{border:1.5px solid rgba(255,255,255,.08);border-radius:6px;padding:12px 10px;text-align:center;cursor:pointer;transition:all .2s;background:var(--d-bg3);}
+.co-popt:hover{border-color:rgba(59,130,246,.4);}
+.co-popt.sel{border-color:var(--blue);background:rgba(59,130,246,.08);}
+.co-popt-icon{font-size:20px;margin-bottom:4px;}
+.co-popt-label{font-size:11px;font-weight:700;color:#F0F0F8;letter-spacing:.02em;}
+.co-popt-sub{font-size:10px;color:#7070A0;margin-top:2px;}
+.co-submit{width:100%;padding:14px;font-size:15px;font-weight:700;border-radius:6px;margin-top:4px;}
+/* Confirmation */
+.co-confirm{padding:40px 28px;text-align:center;}
+.co-confirm-icon{width:60px;height:60px;background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;margin:0 auto 16px;color:var(--green);}
+.co-confirm h3{font-size:22px;font-weight:800;color:#F0F0F8;letter-spacing:-.02em;margin-bottom:6px;}
+.co-order-num{font-size:13px;color:#7070A0;margin-bottom:24px;}
+.co-pay-card{background:var(--d-bg3);border-radius:var(--r);padding:20px;border:1px solid rgba(255,255,255,.06);margin-bottom:20px;text-align:left;}
+.co-pay-card p{font-size:14px;color:#9090B8;line-height:1.7;}
+.co-pay-card p+p{margin-top:6px;}
+.co-pay-card b{color:#F0F0F8;}
+.co-pay-num{font-size:20px;font-weight:800;color:var(--blue);letter-spacing:.04em;margin:10px 0;font-family:'Manrope',monospace;}
+.co-confirm-note{font-size:13px;color:#7070A0;line-height:1.7;}
+.co-confirm-actions{display:flex;gap:10px;justify-content:center;margin-top:20px;flex-wrap:wrap;}
+
+/* ── ANIMATIONS ─────────────────────────────────────────────────────────── */
+
+/* Floating particles (hero) */
+@keyframes float-up{
+  0%  {transform:translateY(0) scale(1);opacity:0;}
+  8%  {opacity:1;}
+  92% {opacity:1;}
+  100%{transform:translateY(-110vh) scale(.3);opacity:0;}
+}
+.hero-particle{
+  position:absolute;border-radius:50%;background:var(--blue);
+  pointer-events:none;will-change:transform,opacity;
+  animation:float-up linear infinite;
+}
+
+/* CTA button pulsing glow */
+@keyframes cta-glow{
+  0%,100%{box-shadow:0 0 0 0 rgba(59,130,246,.5),0 6px 20px rgba(59,130,246,.25);}
+  50%    {box-shadow:0 0 0 14px rgba(59,130,246,0),0 6px 28px rgba(59,130,246,.45);}
+}
+.cta-pulse{animation:cta-glow 2.8s ease-in-out infinite;}
+
+/* Product card shimmer on hover */
+.prod::after{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(105deg,transparent 35%,rgba(59,130,246,.07) 50%,transparent 65%);
+  transform:translateX(-120%);transition:none;
+}
+.prod:hover::after{transform:translateX(120%);transition:transform .65s ease;}
+
+/* Hero glow pulse */
+@keyframes glow-pulse{
+  0%,100%{opacity:.6;transform:translate(-50%,-50%) scale(1);}
+  50%    {opacity:1;  transform:translate(-50%,-50%) scale(1.15);}
+}
+.hero-glow{animation:glow-pulse 5s ease-in-out infinite;}
+
+/* Blue border scan on sci-first card */
+@keyframes border-scan{
+  0%  {background-position:0% 0%;}
+  100%{background-position:0% 100%;}
+}
+
+/* ── YOUTUBE THUMBNAIL PLAYER ─────────────────────────────────────────── */
+.yt-thumb{
+  position:relative;cursor:pointer;border-radius:10px;overflow:hidden;
+  background:#0E0E14;display:block;
+}
+.yt-thumb img{width:100%;height:auto;display:block;transition:transform .4s;}
+.yt-thumb:hover img{transform:scale(1.04);}
+.yt-play-btn{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  background:rgba(0,0,0,.3);transition:background .25s;
+}
+.yt-thumb:hover .yt-play-btn{background:rgba(0,0,0,.5);}
+.yt-play-icon{
+  width:68px;height:68px;background:var(--blue);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 28px rgba(59,130,246,.6);
+  transition:transform .2s,box-shadow .2s;
+}
+.yt-thumb:hover .yt-play-icon{transform:scale(1.12);box-shadow:0 6px 36px rgba(59,130,246,.8);}
+.yt-iframe-wrap{
+  position:relative;padding-bottom:56.25%;height:0;overflow:hidden;
+  border-radius:10px;background:#0E0E14;
+}
+.yt-iframe-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+
+/* CREATINE SCIENCE ACCORDION */
+#cr-science{background:var(--d-bg2);}
+.cr-sci-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+.cr-intro{font-size:15px;color:#9090B8;line-height:1.9;margin-bottom:28px;}
+.cr-accordion{display:flex;flex-direction:column;gap:6px;margin-bottom:28px;}
+.cr-item{background:var(--d-bg3);border-radius:var(--r);border:1px solid rgba(255,255,255,.06);overflow:hidden;transition:border-color .25s;}
+.cr-item.open{border-color:rgba(59,130,246,.3);}
+.cr-btn{width:100%;display:flex;align-items:center;justify-content:space-between;padding:15px 18px;background:none;border:none;color:#F0F0F8;font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;cursor:pointer;text-align:left;gap:12px;transition:color .2s;line-height:1.5;}
+.cr-btn:hover{color:var(--blue);}
+.cr-item.open .cr-btn{color:var(--blue);}
+.cr-chevron{flex-shrink:0;transition:transform .3s;color:#7070A0;}
+.cr-item.open .cr-chevron{transform:rotate(180deg);color:var(--blue);}
+.cr-body{display:none;padding:0 18px 16px;border-top:1px solid rgba(255,255,255,.04);}
+.cr-item.open .cr-body{display:block;}
+.cr-research{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin:12px 0 6px;}
+.cr-body p{font-size:13px;color:#7070A0;line-height:1.85;}
+.cr-body a{font-size:12px;color:var(--blue2);font-weight:600;margin-top:8px;display:inline-flex;align-items:center;gap:4px;transition:color .2s;}
+.cr-body a:hover{color:var(--blue);}
+.cr-bottom{font-size:14px;color:#7070A0;line-height:1.9;margin-bottom:20px;}
+.cr-vid-wrap{border-radius:12px;overflow:hidden;background:#0E0E14;position:relative;padding-bottom:56.25%;height:0;box-shadow:0 20px 60px rgba(0,0,0,.5);}
+.cr-vid-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+.cr-vid-btn{margin-top:16px;display:flex;justify-content:center;}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .prods{grid-template-columns:1fr 1fr;}
+  .ft-top{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:768px){
+  .nav-ul,.nav-r .btn-primary{display:none;}
+  .burger{display:flex;}
+  .brand-grid,.sgr-grid,.cr-sci-grid{grid-template-columns:1fr;}
+  .vals-grid{grid-template-columns:1fr;}
+  .val-full{grid-column:span 1;}
+  .prods{grid-template-columns:1fr;}
+  .bundles-grid{grid-template-columns:1fr;}
+  .rev-grid{grid-template-columns:1fr;}
+  .sci-grid{grid-template-columns:1fr;}
+  .sci-first{grid-row:span 1;}
+  .cta-box{padding:32px 20px;}
+  .ft-top{grid-template-columns:1fr;}
+  .wrap{padding:0 16px;}
+  .sec{padding:64px 0;}
+  .modal-box{max-height:90vh;}
+  .co-row{grid-template-columns:1fr;}
+  .co-payment-opts{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:480px){
+  .cta-btns{flex-direction:column;align-items:stretch;}
+  .cta-btns .btn{width:100%;justify-content:center;}
+  .co-payment-opts{grid-template-columns:repeat(3,1fr);}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="wrap nav-in">
+    <a href="#" class="nav-logo">
+      <img src="logo.png" alt="Mentor Labs" class="nav-logo-svg" fetchpriority="high">
+      <div class="nav-logo-t"><div class="m">mntr</div><div class="l">labs</div></div>
+    </a>
+    <ul class="nav-ul">
+      <li><a href="#brand">О бренде</a></li>
+      <li><a href="#catalog">Бады</a></li>
+      <li><a href="#sgr">Документы</a></li>
+      <li><a href="#science">Наука</a></li>
+      <li><a href="#contacts">Контакты</a></li>
+    </ul>
+    <div class="nav-r">
+      <button class="cart-btn" onclick="toggleCart()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <span class="c-dot" id="cDot">0</span>
+      </button>
+      <a href="#catalog" class="btn btn-primary" style="font-size:13px;padding:10px 20px;">Каталог</a>
+      <button class="burger" id="burger" onclick="toggleMob()"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <a href="#brand" onclick="closeMob()">О бренде</a>
+  <a href="#catalog" onclick="closeMob()">Каталог</a>
+  <a href="#sgr" onclick="closeMob()">Документы</a>
+  <a href="#science" onclick="closeMob()">Наука</a>
+  <a href="#contacts" onclick="closeMob()">Контакты</a>
+  <button class="btn btn-primary" onclick="closeMob();openCheckout();" style="font-size:15px;padding:14px 32px;">Оформить заказ</button>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="grid-pattern"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-slides" id="hSlides">
+    <div class="hero-slide on" data-name="Creatine Monohydrate" data-vol="300 г · 50 порций">
+      <img class="hero-slide-img" src="product-creatine.png" alt="Creatine Monohydrate" style="width:clamp(260px,40vw,480px);" fetchpriority="high" decoding="async">
+    </div>
+    <div class="hero-slide" data-name="L-Theanine" data-vol="120 капсул">
+      <img class="hero-slide-img" src="product-ltheanine.png" alt="L-Theanine" loading="lazy" decoding="async">
+    </div>
+    <div class="hero-slide" data-name="Vitamin D3+K2" data-vol="120 капсул · 2000МЕ + 50мкг">
+      <img class="hero-slide-img" src="product-vitamind3.png" alt="Vitamin D3+K2" loading="lazy" decoding="async">
+    </div>
+  </div>
+  <button class="hero-arrow arrow-l" onclick="prevS()">←</button>
+  <button class="hero-arrow arrow-r" onclick="nextS()">→</button>
+  <div class="hero-label" id="hLabel"><h4>Creatine Monohydrate</h4><span>300 г · 50 порций</span></div>
+  <div class="hero-dots" id="hDots"></div>
+</section>
+
+<!-- BRAND — DARK -->
+<section id="brand" class="sec sec-dark">
+  <div class="wrap">
+    <div class="brand-grid">
+      <div>
+        <div class="sec-tag rev-el">О бренде</div>
+        <h2 class="sec-h2 rev-el" style="color:#F0F0F8;">Mentor <span style="color:var(--blue);">Labs</span></h2>
+        <p class="sec-p sec-p-dark rev-el">Бренд добавок, который выпускает только самые нужные добавки с доказательной научной базой.</p>
+        <div class="brand-pts">
+          <div class="bpt rev-el"><span class="bpt-c">✓</span><span>Только позиции с научным обоснованием</span></div>
+          <div class="bpt rev-el"><span class="bpt-c">✓</span><span>100% открытость — показываем производство и хранение</span></div>
+          <div class="bpt rev-el"><span class="bpt-c">✓</span><span>Качественное сырьё без примесей и наполнителей</span></div>
+          <div class="bpt rev-el"><span class="bpt-c">✓</span><span>Государственная регистрация ЕАЭС на все продукты</span></div>
+        </div>
+        <div class="brand-btns rev-el">
+          <a href="#catalog" class="btn btn-primary">Посмотреть каталог</a>
+          <button onclick="openCheckout()" class="btn btn-outline-dark">Оформить заказ</button>
+        </div>
+      </div>
+      <div class="brand-img-wrap rev-el">
+        <img class="brand-img" src="product-ltheanine.png" alt="L-Theanine" loading="lazy" decoding="async">
+        <div class="brand-img-caption">
+          <h5>L-Theanine · 120 CAPSULES</h5>
+          <p>Натуральная небелковая аминокислота и основной психоактивный элемент зелёного чая</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SGR — DARK -->
+<section id="sgr" class="sec sec-dark2">
+  <div class="wrap">
+    <div class="sgr-grid">
+      <div>
+        <div class="sec-tag rev-el">Документы</div>
+        <h2 class="sec-h2 rev-el" style="color:#F0F0F8;">Государственная<br><span style="color:var(--blue);">регистрация БАДов</span></h2>
+        <div style="height:8px;"></div>
+        <p class="sec-p sec-p-dark rev-el">Каждая наша добавка имеет свидетельство о государственной регистрации ЕАЭС.</p>
+        <div style="height:16px;"></div>
+        <div class="sgr-pts">
+          <div class="sgr-pt rev-el"><h5>1. Законность деятельности</h5><p>Без СГР производство и реализация специализированных пищевых добавок запрещены.</p></div>
+          <div class="sgr-pt rev-el"><h5>2. Подтверждение безопасности</h5><p>Продукт прошёл лабораторные исследования и соответствует нормам Таможенного союза.</p></div>
+          <div class="sgr-pt rev-el"><h5>3. Свободное обращение в ЕАЭС</h5><p>Действует в России, Беларуси, Казахстане, Армении и Киргизии.</p></div>
+        </div>
+        <div class="rev-el"><a href="https://t.me/MntrLabs" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Посмотреть документы</a></div>
+      </div>
+      <div class="cert-wrap rev-el">
+        <img src="cert-sgr.png" alt="Свидетельство СГР" loading="lazy" decoding="async">
+        <div class="cert-foot">
+          <strong>Свидетельство о государственной регистрации</strong>
+          <span>№ АМ.01.04.01.007.R.000203.10.23 от 04.10.2023 · Creatine Monohydrate</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES — DARK -->
+<section id="values" class="sec sec-light2">
+  <div class="wrap">
+    <div class="vals-hdr">
+      <div class="sec-tag rev-el" style="display:inline-block;margin-bottom:8px;">Принципы</div>
+      <h2 class="sec-h2 rev-el" style="color:#0E0E14;">Ценности Mentor <span style="color:var(--blue);">Labs</span></h2>
+    </div>
+    <div class="vals-grid">
+      <div class="val-card rev-el"><div class="val-n">01</div><h4>Полная открытость</h4><p>Мы на 100% открыты и ничего не скрываем. Показываем где и как производим нашу продукцию, как храним и даже упаковываем заказы.</p><p>Нет никаких волшебных таблеток и секретных технологий — только работа на качество.</p></div>
+      <div class="val-card rev-el"><div class="val-n">02</div><h4>Узкий ассортимент, только нужного</h4><p>Большое количество добавок не имеют сильной доказательной базы и являются маркетинговым пузырём.</p><p>Мы производим только позиции с научным обоснованием.</p></div>
+      <div class="val-card val-full rev-el"><div class="val-n">03</div><h4>Только лучшее сырьё и технологии производства</h4><p>Существует практика добавления в БАДы неактивных форм веществ или наполнителей (мальтодекстрим) с целью снизить себестоимость. Мы используем только качественное сырьё без примесей.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CATALOG — DARK -->
+<section id="catalog" class="sec sec-dark">
+  <div class="wrap">
+    <div class="cat-hdr">
+      <div class="sec-tag rev-el" style="display:inline-block;margin-bottom:8px;">Ассортимент</div>
+      <h2 class="sec-h2 rev-el" style="color:#F0F0F8;">Каталог</h2>
+    </div>
+    <div class="prods" id="prodsGrid"></div>
+  </div>
+</section>
+
+<!-- COMING SOON -->
+<section id="coming-soon" class="sec sec-dark2">
+  <div class="wrap">
+    <div class="cat-hdr" style="margin-bottom:48px;">
+      <div class="sec-tag rev-el" style="display:inline-block;margin-bottom:8px;">Скоро в продаже</div>
+      <h2 class="sec-h2 rev-el"><span style="color:#F0F0F8;">Новые </span><span style="color:var(--blue);">добавки</span></h2>
+      <p class="sec-p rev-el" style="color:#7070A0;margin:12px auto 0;text-align:center;">Уже на производстве — следи за обновлениями в Telegram</p>
+    </div>
+    <div class="prods" style="justify-content:center;">
+      <div class="prod rev-el" style="max-width:380px;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:16px;right:16px;z-index:2;">
+          <span class="pill" style="background:rgba(59,130,246,.15);color:var(--blue2);border:1px solid rgba(59,130,246,.3);font-size:10px;font-weight:800;letter-spacing:.08em;">СКОРО</span>
+        </div>
+        <div class="prod-ph" style="padding:16px;">
+          <div style="width:100%;border-radius:12px;overflow:hidden;position:relative;box-shadow:0 4px 24px rgba(0,0,0,.4);">
+            <img src="product-magnesium.jpg" alt="Magnesium Glycinate" style="width:100%;height:240px;object-fit:cover;display:block;" loading="lazy" decoding="async">
+            <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(59,130,246,.1) 0%,transparent 60%);pointer-events:none;"></div>
+          </div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-tags">
+            <span class="prod-tag">SLEEP</span>
+            <span class="prod-tag">RECOVERY</span>
+            <span class="prod-tag">STRESS</span>
+          </div>
+          <div class="prod-name">Magnesium Glycinate</div>
+          <div class="prod-vol">120 капсул · + Vitamin B6</div>
+          <div class="prod-desc" style="color:#7070A0;">Магний в форме глицината — лучшая биодоступность. Снижает стресс, улучшает сон и восстановление. В комплексе с витамином B6.</div>
+          <div class="prod-pr-row">
+            <div class="prod-price" style="color:#7070A0;font-size:16px;">Цена скоро</div>
+          </div>
+          <div class="prod-btns">
+            <a href="https://t.me/mentor_labs" target="_blank" rel="noopener noreferrer" class="btn-cart" style="background:var(--blue);color:#fff;text-align:center;display:block;padding:12px;border-radius:8px;font-weight:700;font-size:13px;text-decoration:none;">🔔 Уведомить о старте</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUNDLES — DARK -->
+<section id="bundles" class="sec sec-dark">
+  <div class="wrap">
+    <div class="cat-hdr">
+      <div class="sec-tag rev-el" style="display:inline-block;margin-bottom:8px;">Комплексы</div>
+      <h2 class="sec-h2 rev-el" style="color:#F0F0F8;">С этим берут <span style="color:var(--blue);">вместе</span></h2>
+    </div>
+    <div class="bundles-grid">
+      <div class="bundle rev-el">
+        <div class="b-save">Экономия 250 ₽</div>
+        <div class="b-items"><div class="b-pill">Креатин</div><div class="b-plus">+</div><div class="b-pill">L-Theanine</div></div>
+        <p class="b-desc">Стек для спорта и продуктивности: сила + фокус без тревожности</p>
+        <div class="b-prices"><div class="b-new">2 800 ₽</div><div class="b-old">3 050 ₽</div></div>
+        <button class="b-btn" onclick="openCheckoutBundle('Креатин + L-Theanine', 2800)">Оформить комплекс →</button>
+      </div>
+      <div class="bundle rev-el">
+        <div class="b-save">Экономия 300 ₽</div>
+        <div class="b-items"><div class="b-pill">L-Theanine</div><div class="b-plus">+</div><div class="b-pill">Витамин D3+K2</div></div>
+        <p class="b-desc">Здоровье и спокойствие: снижение тревожности + иммунная защита</p>
+        <div class="b-prices"><div class="b-new">2 290 ₽</div><div class="b-old">2 590 ₽</div></div>
+        <button class="b-btn" onclick="openCheckoutBundle('L-Theanine + Витамин D3+K2', 2290)">Оформить комплекс →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS — DARK -->
+<section id="reviews" class="sec sec-light2">
+  <div class="wrap">
+    <div class="rev-hdr">
+      <div class="sec-tag rev-el" style="display:inline-block;margin-bottom:8px;">Отзывы</div>
+      <h2 class="sec-h2 rev-el" style="color:#0E0E14;">Что говорят <span style="color:var(--blue);">клиенты</span></h2>
+    </div>
+    <div class="rev-grid">
+      <div class="rev-card rev-el">
+        <img class="rev-photo" src="review-muhammad.jpg" alt="Отзыв Мухаммад L-Theanine" loading="lazy" decoding="async">
+        <div class="rev-body">
+          <div class="rev-top"><div class="rev-ava" style="background:#2563EB;">М</div><div><div class="rev-name">Мухаммад</div><div class="rev-city">Telegram @mentor_review</div></div></div>
+          <div class="rev-stars">★★★★★</div>
+          <p class="rev-text">Добавка хорошая, мне очень понравилась, с собой на отдых тоже забрал. Как первый же раз принял, сразу почувствовал утром что проснулся намного менее разбитым чем обычно.</p>
+          <div class="rev-prod">L-Theanine · 120 caps</div>
+        </div>
+      </div>
+      <div class="rev-card rev-el">
+        <img class="rev-photo" src="review-zagir.jpg" alt="Отзыв Zagir L-Theanine" loading="lazy" decoding="async">
+        <div class="rev-body">
+          <div class="rev-top"><div class="rev-ava" style="background:#7C3AED;">Z</div><div><div class="rev-name">Zagir Magomedov</div><div class="rev-city">Telegram @mentor_review</div></div></div>
+          <div class="rev-stars">★★★★★</div>
+          <p class="rev-text">«Эффект сильный был, ахи. Не знаю прям, я сильно заряжен был.» — принимает L-Theanine с кофе каждый день.</p>
+          <div class="rev-prod">L-Theanine · 120 caps</div>
+        </div>
+      </div>
+      <div class="rev-card rev-el">
+        <img class="rev-photo" src="review-timur.jpg" alt="Отзыв Creatine Monohydrate" loading="lazy" decoding="async">
+        <div class="rev-body">
+          <div class="rev-top"><div class="rev-ava" style="background:#16a34a;">Т</div><div><div class="rev-name">Тимур Зайнутдинов</div><div class="rev-city">Telegram @mentor_review</div></div></div>
+          <div class="rev-stars">★★★★★</div>
+          <p class="rev-text">Самый бомбовый, который я пил! Не горчит, растворяется идеально 👌</p>
+          <div class="rev-prod">Creatine Monohydrate · 300g</div>
+        </div>
+      </div>
+    </div>
+    <div class="rev-link rev-el">
+      <a href="https://t.me/mentor_review" target="_blank" rel="noopener noreferrer">Все отзывы в Telegram @mentor_review →</a>
+    </div>
+  </div>
+</section>
+
+<!-- SCIENCE — DARK -->
+<section id="science" class="sec sec-dark">
+  <div class="wrap">
+    <div class="sec-tag rev-el">Научная база</div>
+    <h2 class="sec-h2 rev-el" style="color:#F0F0F8;margin-bottom:8px;">Научные доказательства<br><span style="color:var(--blue);">о БАДах</span></h2>
+    <p class="sec-p sec-p-dark rev-el" style="margin-bottom:44px;">Материалы с ссылками на клинические исследования</p>
+    <div class="sci-grid">
+      <div class="sci-card sci-first rev-el">
+        <div class="sci-top">
+          <!-- Molecule / Creatine icon -->
+          <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="30" cy="30" r="8" fill="#3B82F6"/>
+            <circle cx="30" cy="8"  r="5" fill="#60A5FA" opacity=".85"/>
+            <circle cx="30" cy="52" r="5" fill="#60A5FA" opacity=".85"/>
+            <circle cx="8"  cy="30" r="5" fill="#60A5FA" opacity=".85"/>
+            <circle cx="52" cy="30" r="5" fill="#60A5FA" opacity=".85"/>
+            <circle cx="12" cy="12" r="4" fill="#93C5FD" opacity=".6"/>
+            <circle cx="48" cy="12" r="4" fill="#93C5FD" opacity=".6"/>
+            <circle cx="12" cy="48" r="4" fill="#93C5FD" opacity=".6"/>
+            <circle cx="48" cy="48" r="4" fill="#93C5FD" opacity=".6"/>
+            <line x1="30" y1="22" x2="30" y2="13" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="30" y1="38" x2="30" y2="47" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="22" y1="30" x2="13" y2="30" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="38" y1="30" x2="47" y2="30" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="23" y1="23" x2="16" y2="16" stroke="#60A5FA" stroke-width="2" stroke-linecap="round" opacity=".7"/>
+            <line x1="37" y1="23" x2="44" y2="16" stroke="#60A5FA" stroke-width="2" stroke-linecap="round" opacity=".7"/>
+            <line x1="23" y1="37" x2="16" y2="44" stroke="#60A5FA" stroke-width="2" stroke-linecap="round" opacity=".7"/>
+            <line x1="37" y1="37" x2="44" y2="44" stroke="#60A5FA" stroke-width="2" stroke-linecap="round" opacity=".7"/>
+          </svg>
+        </div>
+        <div class="sci-body">
+          <span class="pill pill-blue" style="margin-bottom:12px;font-size:10px;">Самая изученная добавка</span>
+          <h4>Всё о Креатине</h4>
+          <p style="margin-bottom:12px;">Более 45 рандомизированных контролируемых исследований подтверждают эффективность креатина.</p>
+          <div class="sci-effs">
+            <div class="sci-ef">+8% силовые показатели (Rawson & Volek, 2003)</div>
+            <div class="sci-ef">Ускоряет восстановление после нагрузок</div>
+            <div class="sci-ef">Улучшает когнитивные функции и память</div>
+            <div class="sci-ef">Снижает маркеры воспаления</div>
+            <div class="sci-ef">Нивелирует недостаток сна (Watanabe et al.)</div>
+          </div>
+          <div style="margin-top:14px;display:flex;flex-direction:column;gap:8px;">
+            <a href="https://pubmed.ncbi.nlm.nih.gov/12701815/" target="_blank" rel="noopener noreferrer" class="sci-link">📄 PubMed: Creatine supplementation and exercise →</a>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/14636102/" target="_blank" rel="noopener noreferrer" class="sci-link">📄 PubMed: Effects of creatine on brain →</a>
+            <a href="https://t.me/mentor_labs/26" target="_blank" rel="noopener noreferrer" class="sci-link" style="color:var(--blue2);">📱 Читать полную статью в Telegram →</a>
+          </div>
+        </div>
+      </div>
+      <div class="sci-card rev-el">
+        <div class="sci-top">
+          <!-- Tea leaf / L-Theanine icon -->
+          <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M26 5 C40 5 47 14 47 26 C47 38 40 47 26 47 C12 47 5 38 5 26 C5 14 12 5 26 5Z" fill="#3B82F6" opacity=".12" stroke="#3B82F6" stroke-width="1.8"/>
+            <line x1="26" y1="13" x2="26" y2="42" stroke="#3B82F6" stroke-width="2.2" stroke-linecap="round"/>
+            <line x1="26" y1="20" x2="17" y2="28" stroke="#60A5FA" stroke-width="1.8" stroke-linecap="round" opacity=".8"/>
+            <line x1="26" y1="27" x2="17" y2="35" stroke="#60A5FA" stroke-width="1.8" stroke-linecap="round" opacity=".6"/>
+            <line x1="26" y1="20" x2="35" y2="28" stroke="#60A5FA" stroke-width="1.8" stroke-linecap="round" opacity=".8"/>
+            <line x1="26" y1="27" x2="35" y2="35" stroke="#60A5FA" stroke-width="1.8" stroke-linecap="round" opacity=".6"/>
+            <line x1="26" y1="42" x2="26" y2="49" stroke="#3B82F6" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M20 48 Q26 44 32 48" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round" fill="none" opacity=".5"/>
+          </svg>
+        </div>
+        <div class="sci-body">
+          <h4>L-Theanine: наука о фокусе</h4>
+          <p style="margin-bottom:12px;">Натуральная аминокислота из зелёного чая. Содержится в чайных листьях и грибах Boletus badius.</p>
+          <div class="sci-effs">
+            <div class="sci-ef">Снижает острый стресс и тревожность</div>
+            <div class="sci-ef">Улучшает концентрацию и внимание</div>
+            <div class="sci-ef">Синергия с кофеином: фокус без нервозности</div>
+            <div class="sci-ef">Улучшает качество сна</div>
+          </div>
+          <div style="margin-top:14px;display:flex;flex-direction:column;gap:8px;">
+            <a href="https://pubmed.ncbi.nlm.nih.gov/18296328/" target="_blank" rel="noopener noreferrer" class="sci-link">📄 PubMed: L-Theanine reduces anxiety →</a>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/18681988/" target="_blank" rel="noopener noreferrer" class="sci-link">📄 PubMed: L-Theanine + Caffeine →</a>
+            <a href="https://t.me/mentor_labs/30" target="_blank" rel="noopener noreferrer" class="sci-link" style="color:var(--blue2);">📱 Читать полную статью в Telegram →</a>
+          </div>
+        </div>
+      </div>
+      <div class="sci-card rev-el">
+        <div class="sci-top">
+          <!-- Sun / Vitamin D icon -->
+          <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="26" cy="26" r="10" fill="#3B82F6"/>
+            <circle cx="26" cy="26" r="10" fill="url(#sunGrad)" opacity=".3"/>
+            <defs>
+              <radialGradient id="sunGrad" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#FBBF24"/>
+                <stop offset="100%" stop-color="#3B82F6" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <!-- 8 rays -->
+            <line x1="26" y1="5"  x2="26" y2="12" stroke="#60A5FA" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="26" y1="40" x2="26" y2="47" stroke="#60A5FA" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="5"  y1="26" x2="12" y2="26" stroke="#60A5FA" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="40" y1="26" x2="47" y2="26" stroke="#60A5FA" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="9.5"  y1="9.5"  x2="14.6" y2="14.6" stroke="#93C5FD" stroke-width="2.2" stroke-linecap="round"/>
+            <line x1="37.4" y1="37.4" x2="42.5" y2="42.5" stroke="#93C5FD" stroke-width="2.2" stroke-linecap="round"/>
+            <line x1="42.5" y1="9.5"  x2="37.4" y2="14.6" stroke="#93C5FD" stroke-width="2.2" stroke-linecap="round"/>
+            <line x1="14.6" y1="37.4" x2="9.5"  y2="42.5" stroke="#93C5FD" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="sci-body">
+          <h4>Витамин D3+K2</h4>
+          <p style="margin-bottom:12px;">D3 жирорастворимый витамин, вырабатываемый кожей под УФ-излучением. Дефицит — у 80% жителей России.</p>
+          <div class="sci-effs">
+            <div class="sci-ef">Усвоение кальция и здоровье костей</div>
+            <div class="sci-ef">Снижает воспалительные маркеры</div>
+            <div class="sci-ef">K2 направляет кальций в кости, не в артерии</div>
+            <div class="sci-ef">Иммунитет и гормональный баланс</div>
+          </div>
+          <div style="margin-top:14px;display:flex;flex-direction:column;gap:8px;">
+            <a href="https://pubmed.ncbi.nlm.nih.gov/20194238/" target="_blank" rel="noopener noreferrer" class="sci-link">📄 PubMed: Vitamin D deficiency →</a>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/22516723/" target="_blank" rel="noopener noreferrer" class="sci-link">📄 PubMed: Vitamin D3 + K2 →</a>
+            <a href="https://t.me/mentor_labs/25" target="_blank" rel="noopener noreferrer" class="sci-link" style="color:var(--blue2);">📱 Читать полную статью в Telegram →</a>
+          </div>
+        </div>
+      </div>
+      <div class="sci-card rev-el">
+        <div class="sci-top">
+          <!-- Warehouse / Storage icon -->
+          <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <!-- roof -->
+            <path d="M3 22 L26 6 L49 22" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- building body -->
+            <rect x="7" y="21" width="38" height="25" rx="1.5" stroke="#3B82F6" stroke-width="2" fill="#3B82F6" fill-opacity=".08"/>
+            <!-- door -->
+            <rect x="20" y="32" width="12" height="14" rx="1" fill="#3B82F6" opacity=".25" stroke="#3B82F6" stroke-width="1.5"/>
+            <!-- windows -->
+            <rect x="10" y="26" width="9" height="7" rx="1" fill="#60A5FA" opacity=".25" stroke="#60A5FA" stroke-width="1.2"/>
+            <rect x="33" y="26" width="9" height="7" rx="1" fill="#60A5FA" opacity=".25" stroke="#60A5FA" stroke-width="1.2"/>
+            <!-- checkmark on door -->
+            <path d="M23 39 L25.5 41.5 L29 37" stroke="#22C55E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="sci-body">
+          <h4>Как хранятся наши БАДы</h4>
+          <p style="margin-bottom:14px;">Room tour по складу-офису Mentor Labs. 100% прозрачность условий хранения и производства.</p>
+          <div class="yt-thumb" onclick="playYT(this,'kFO2MWHgMuY')">
+            <img src="https://img.youtube.com/vi/kFO2MWHgMuY/hqdefault.jpg" alt="Room tour по складу-офису Mentor Labs" loading="lazy" decoding="async">
+            <div class="yt-play-btn">
+              <div class="yt-play-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+          </div>
+          <a href="https://t.me/mentor_labs/15" target="_blank" rel="noopener noreferrer" class="sci-link" style="margin-top:10px;display:inline-block;">📱 Смотреть в Telegram →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREATINE SCIENCE DEEP DIVE -->
+<section id="cr-science" class="sec sec-dark">
+  <div class="wrap">
+    <div class="sec-tag rev-el" style="display:inline-block;margin-bottom:10px;">Научная база</div>
+    <h2 class="sec-h2 rev-el" style="color:#F0F0F8;margin-bottom:32px;">Научные доказательства<br><span style="color:var(--blue);">о Бадах</span></h2>
+    <div class="cr-sci-grid">
+      <!-- LEFT: accordion -->
+      <div class="rev-el">
+        <p class="cr-intro">Все что нужно знать о <b style="color:#F0F0F8;">Creatine</b>. Эффекты. Научные данные. Побочки.</p>
+        <div class="cr-accordion">
+
+          <div class="cr-item open">
+            <button class="cr-btn" onclick="toggleCr(this)">
+              <span>1. Улучшает работоспособность мышц</span>
+              <svg class="cr-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="cr-body">
+              <div class="cr-research">Исследования:</div>
+              <p>Rawson &amp; Volek (2003) — мета-анализ 22 РКИ подтвердил прирост силовых показателей на <b style="color:#F0F0F8;">+8%</b> по сравнению с контролем. Мышцы быстрее восстанавливают запасы АТФ во время подходов.</p>
+              <a href="https://pubmed.ncbi.nlm.nih.gov/12701815/" target="_blank" rel="noopener noreferrer">📄 PubMed: Rawson &amp; Volek (2003) →</a>
+            </div>
+          </div>
+
+          <div class="cr-item">
+            <button class="cr-btn" onclick="toggleCr(this)">
+              <span>2. Увеличивает выносливость</span>
+              <svg class="cr-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="cr-body">
+              <div class="cr-research">Исследования:</div>
+              <p>Lanhers et al. (2017) — систематический обзор: суплементация креатином достоверно увеличивает количество повторений до отказа и общий объём тренировки.</p>
+              <a href="https://pubmed.ncbi.nlm.nih.gov/27328852/" target="_blank" rel="noopener noreferrer">📄 PubMed: Lanhers et al. (2017) →</a>
+            </div>
+          </div>
+
+          <div class="cr-item">
+            <button class="cr-btn" onclick="toggleCr(this)">
+              <span>3. Улучшает восстановление</span>
+              <svg class="cr-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="cr-body">
+              <div class="cr-research">Исследования:</div>
+              <p>Santos et al. (2004) — снижение маркеров повреждения мышц (КФК, ЛДГ) после интенсивных тренировок у спортсменов, принимавших креатин.</p>
+              <a href="https://pubmed.ncbi.nlm.nih.gov/14971435/" target="_blank" rel="noopener noreferrer">📄 PubMed: Santos et al. (2004) →</a>
+            </div>
+          </div>
+
+          <div class="cr-item">
+            <button class="cr-btn" onclick="toggleCr(this)">
+              <span>4. Увеличивает общую работоспособность</span>
+              <svg class="cr-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="cr-body">
+              <div class="cr-research">Исследования:</div>
+              <p>Kreider et al. (2017) — позиция ISSN: креатин — наиболее эффективная эргогенная добавка для повышения интенсивности и объёма тренировок высокой мощности.</p>
+              <a href="https://pubmed.ncbi.nlm.nih.gov/28615996/" target="_blank" rel="noopener noreferrer">📄 PubMed: Kreider et al. (2017) →</a>
+            </div>
+          </div>
+
+          <div class="cr-item">
+            <button class="cr-btn" onclick="toggleCr(this)">
+              <span>5. Улучшает когнитивные функции</span>
+              <svg class="cr-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="cr-body">
+              <div class="cr-research">Исследования:</div>
+              <p>Rae et al. (2003) — двойное слепое РКИ: 5 г креатина в день улучшили рабочую память и скорость обработки информации у здоровых участников.</p>
+              <a href="https://pubmed.ncbi.nlm.nih.gov/14561278/" target="_blank" rel="noopener noreferrer">📄 PubMed: Rae et al. (2003) →</a>
+            </div>
+          </div>
+
+        </div>
+        <p class="cr-bottom">Креатин — это самая изученная и доказанная добавка.<br>У нас вы можете приобрести микронизированный креатин моногидрат шикарного качества:</p>
+        <button onclick="addCart('creatine');openCart();" class="btn btn-primary">Купить Creatine Monohydrate →</button>
+      </div>
+
+      <!-- RIGHT: video -->
+      <div class="rev-el">
+        <div class="yt-thumb" onclick="playYT(this,'wI9Me-9uE6o')">
+          <img src="https://img.youtube.com/vi/wI9Me-9uE6o/hqdefault.jpg" alt="Все что нужно знать о креатине — Mentor Labs" loading="lazy" decoding="async">
+          <div class="yt-play-btn">
+            <div class="yt-play-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="cr-vid-btn">
+          <a href="https://youtu.be/wI9Me-9uE6o" target="_blank" rel="noopener noreferrer" class="btn btn-primary">▶ Смотреть на YouTube</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contacts" class="sec sec-dark2">
+  <div class="wrap">
+    <div class="cta-box rev-el">
+      <h2>Готовы начать?</h2>
+      <p>Оформляйте заказ прямо на сайте. Принимаем карты, СБП и криптовалюту.</p>
+      <div class="cta-btns">
+        <button onclick="openCheckout()" class="btn btn-primary cta-pulse" style="font-size:15px;padding:15px 36px;">Оформить заказ →</button>
+        <a href="https://t.me/MntrLabs" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark">Написать менеджеру</a>
+      </div>
+      <div class="cta-cs">
+        <div class="cta-c">👤 <a href="https://t.me/MntrLabs" target="_blank" rel="noopener noreferrer">@MntrLabs</a></div>
+        <div class="cta-c">⭐ <a href="https://t.me/mentor_review" target="_blank" rel="noopener noreferrer">@mentor_review</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="ft-top">
+      <div class="ft-about">
+        <a href="#" class="nav-logo" style="display:inline-flex;">
+          <img src="logo.png" alt="Mentor Labs" style="height:28px;width:auto;object-fit:contain;" loading="lazy">
+          <div class="nav-logo-t" style="margin-left:8px;"><div class="m" style="font-size:13px;">mntr</div><div class="l" style="font-size:11px;">labs</div></div>
+        </a>
+        <p>Бренд добавок с доказательной научной базой. Только нужное.</p>
+      </div>
+      <div class="ft-col"><h5>Навигация</h5><ul><li><a href="#brand">О бренде</a></li><li><a href="#catalog">Каталог</a></li><li><a href="#sgr">Документы</a></li><li><a href="#science">Наука</a></li><li><a href="#contacts">Контакты</a></li></ul></div>
+      <div class="ft-col"><h5>Документы</h5><ul><li><a href="#">Публичная оферта</a></li><li><a href="#">Политика конфиденциальности</a></li><li><a href="#">Согласие на обработку данных</a></li><li><a href="https://t.me/MntrLabs" target="_blank" rel="noopener noreferrer">Свидетельства СГР</a></li></ul></div>
+      <div class="ft-col"><h5>Контакты</h5><ul><li><a href="https://t.me/MntrLabs" target="_blank" rel="noopener noreferrer">@MntrLabs</a></li><li><a href="https://t.me/mentor_review" target="_blank" rel="noopener noreferrer">@mentor_review</a></li></ul></div>
+    </div>
+    <div class="ft-bot">
+      <span>© Mentor Labs 2026 — Все права защищены.</span>
+      <div class="ft-soc"><a href="https://t.me/MntrLabs" target="_blank" rel="noopener noreferrer">✈</a><a href="https://t.me/mentor_review" target="_blank" rel="noopener noreferrer">⭐</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- CART -->
+<div class="cart-ov" id="cOv" onclick="closeCart()"></div>
+<div class="cart-side" id="cSide">
+  <div class="cart-hdr"><h3>Корзина</h3><button class="cart-x" onclick="closeCart()">✕</button></div>
+  <div class="cart-items" id="cItems"><div class="cart-empty"><div class="ei">🛒</div><p>Корзина пуста</p></div></div>
+  <div class="cart-ft" id="cFt" style="display:none;">
+    <div class="cart-tot"><span>Итого:</span><strong id="cTot">0 ₽</strong></div>
+    <button class="btn btn-primary cart-ck" style="font-size:14px;" onclick="closeCart();openCheckout();">Оформить заказ →</button>
+    <button class="cart-mgr" onclick="window.open('https://t.me/MntrLabs','_blank','noopener,noreferrer')">Написать менеджеру @MntrLabs</button>
+    <p class="cart-note">Принимаем карты, СБП и криптовалюту</p>
+  </div>
+</div>
+
+<!-- STICKY BAR -->
+<div class="sticky" id="sticky">
+  <div class="st-l"><h4>Mentor Labs</h4><span>БАДы с научной доказательной базой</span></div>
+  <div class="st-price">от 1 090 ₽</div>
+  <a href="#catalog" class="btn btn-primary" style="font-size:13px;padding:11px 22px;" onclick="document.getElementById('sticky').classList.remove('on')">Выбрать →</a>
+</div>
+
+<!-- PRODUCT DETAIL MODAL -->
+<div class="modal-ov" id="modOv" onclick="if(event.target===this)closeMod()">
+  <div class="modal-box" id="modBox">
+    <button class="modal-close" onclick="closeMod()">✕</button>
+    <div id="modContent"></div>
+  </div>
+</div>
+
+<!-- CHECKOUT MODAL -->
+<div class="co-ov" id="coOv" onclick="if(event.target===this)closeCo()">
+  <div class="co-box" id="coBox">
+    <button class="co-close" onclick="closeCo()">✕</button>
+    <div id="coContent">
+      <!-- STEP 1: Form -->
+      <div id="coStep1">
+        <div class="co-head">
+          <div class="sec-tag">Оформление заказа</div>
+          <h3>Ваши данные</h3>
+        </div>
+        <div id="coOrderSummary"></div>
+        <div class="co-form">
+          <div class="co-row">
+            <div class="co-field"><label>Имя *</label><input type="text" id="coName" required placeholder="Ваше имя"></div>
+            <div class="co-field"><label>Телефон *</label><input type="tel" id="coPhone" required placeholder="+7 900 000 00 00"></div>
+          </div>
+          <div class="co-field"><label>Email</label><input type="email" id="coEmail" placeholder="email@mail.ru"></div>
+          <div class="co-row">
+            <div class="co-field"><label>Город *</label><input type="text" id="coCity" required placeholder="Москва"></div>
+            <div class="co-field">
+              <label>Доставка *</label>
+              <select id="coDelivery" required>
+                <option value="">— выберите —</option>
+                <option value="cdek">СДЭК (до ПВЗ)</option>
+                <option value="cdek_courier">СДЭК (курьер)</option>
+                <option value="post">Почта России</option>
+                <option value="pickup">Самовывоз (Москва)</option>
+              </select>
+            </div>
+          </div>
+          <div class="co-field"><label>Способ оплаты *</label></div>
+          <div class="co-payment-opts" id="coPayOpts">
+            <div class="co-popt sel" onclick="selPay(this,'sbp')"><div class="co-popt-icon">📱</div><div class="co-popt-label">СБП</div><div class="co-popt-sub">Быстро</div></div>
+            <div class="co-popt" onclick="selPay(this,'card')"><div class="co-popt-icon">💳</div><div class="co-popt-label">Карта</div><div class="co-popt-sub">Онлайн</div></div>
+            <div class="co-popt" onclick="selPay(this,'crypto')"><div class="co-popt-icon">₿</div><div class="co-popt-label">Крипто</div><div class="co-popt-sub">USDT</div></div>
+          </div>
+          <input type="hidden" id="coPayMethod" value="sbp">
+          <button class="btn btn-primary co-submit" onclick="handleCheckout(event)">Оформить заказ →</button>
+        </div>
+      </div>
+      <!-- STEP 2: Confirmation -->
+      <div id="coStep2" style="display:none;"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── Escape HTML to prevent XSS ──────────────────────────────────────────────
+function esc(s){
+  return String(s)
+    .replace(/&/g,'&amp;')
+    .replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;')
+    .replace(/'/g,'&#39;');
+}
+
+// ── Products (static, trusted data) ─────────────────────────────────────────
+const PRODS = [
+  {id:'creatine',name:'Creatine Monohydrate',vol:'300 г · 50 порций',desc:'Микронизированный креатин моногидрат. Самая изученная и доказанная добавка для спорта и когнитивных функций.',price:1550,tags:['STRENGTH','ENERGY','RECOVERY'],proof:'★★★★★ 4.9 (87 отзывов)',img:'c',
+    full:`<p><b>Creatine Monohydrate от Mntr Labs</b></p><p>Креатин — это молекула, которая вырабатывается в организме из аминокислот аргинина, глицина, метионина в печени, почках и поджелудочной железе.</p><p><b>Кому будет полезен?</b><br>Must have добавка для людей, занимающихся силовыми видами спорта, а также для тех, кто хочет поработать над когнитивными функциями, нивелировать недостаток сна и снизить маркеры воспаления.</p><p><b>Научные данные:</b><br>Существует более 45 рандомизированных контролируемых исследований, которые говорят что креатин увеличивает силу.</p>`},
+  {id:'ltheanine',name:'L-Theanine',vol:'120 капсул',desc:'Натуральная аминокислота из зелёного чая. Снижает тревожность, улучшает фокус и концентрацию без седативного эффекта.',price:1500,tags:['MOTIVATION','FOCUS','PRODUCTIVITY'],proof:'★★★★★ 4.8 (54 отзыва)',img:'l',
+    full:`<p><b>L-Theanine от Mntr Labs</b></p><p>Это натуральная небелковая аминокислота и основной психоактивный элемент, найденный в составе чая. Его извлекают напрямую из чая, либо синтезируют, используя биологические ферменты.</p><p><b>Эффекты:</b></p><ul><li>Улучшение когнитивных функций: концентрации, внимания</li><li>Снижение стресса и тревожности</li><li>Улучшение сна</li><li>Лучшая добавка для кофеманов — синергетический эффект с кофеином</li></ul><p><b>Научные данные:</b><br>Теанин снижает как сам стресс, так и реакцию на стресс. Снижает беспокойство при острых стрессовых ситуациях, может предотвращать повышение артериального давления.</p>`},
+  {id:'vitamind3k2',name:'Vitamin D3+K2',vol:'120 капсул · 2000МЕ + 50мкг',desc:'Комплекс для здоровья костей, иммунитета и гормонального баланса. D3 эффективен только с K2.',price:1090,tags:['2000 ME','50 MCG'],proof:'★★★★★ 4.9 (112 отзывов)',img:'v',
+    full:`<p><b>Витамин D3+K2 от Mntr Labs</b></p><p>Витамин D — жирорастворимый витамин, который естественным образом присутствует в некоторых продуктах питания и вырабатывается эндогенно, когда лучи солнца попадают на кожу.</p><p><b>Эффекты:</b></p><ul><li>Витамин D способствует усвоению кальция в кишечнике</li><li>Необходим для роста костей — без него кости могут стать тонкими, ломкими или деформированными</li><li>Витамин D уменьшает воспаления в организме</li></ul>`}
+];
+
+const IMGS = {
+  c:'product-creatine.png',
+  l:'product-ltheanine.png',
+  v:'product-vitamind3.png'
+};
+
+// ── Render Products ──────────────────────────────────────────────────────────
+function renderProds(){
+  document.getElementById('prodsGrid').innerHTML = PRODS.map(p=>`
+    <div class="prod rev-el">
+      <div class="prod-ph">
+        <img class="prod-img${p.img==='c'?' prod-img-lg':''}" src="${IMGS[p.img]}" alt="${esc(p.name)}" loading="lazy" decoding="async">
+        <div class="prod-badge"><span class="pill pill-green">В наличии</span></div>
+      </div>
+      <div class="prod-body">
+        <div class="prod-tags">${p.tags.map(t=>`<span class="prod-tag">${esc(t)}</span>`).join('')}</div>
+        <div class="prod-name">${esc(p.name)}</div>
+        <div class="prod-vol">${esc(p.vol)}</div>
+        <div class="prod-desc">${esc(p.desc)}</div>
+        <div class="prod-pr-row">
+          <div class="prod-price">${p.price.toLocaleString('ru')}<sub> ₽</sub></div>
+          <div class="prod-rating">${esc(p.proof)}</div>
+        </div>
+        <div class="prod-btns">
+          <button class="btn-cart" id="bc-${esc(p.id)}" onclick="addCart('${esc(p.id)}')">🛒 В корзину</button>
+          <button class="btn-info" onclick="openMod('${esc(p.id)}')">О товаре</button>
+        </div>
+      </div>
+      <div class="prod-social">${esc(p.proof)}</div>
+    </div>
+  `).join('');
+  initRev();
+}
+
+// ── Cart: load with strict validation to prevent XSS from tampered storage ──
+let cart = [];
+try {
+  const raw = JSON.parse(localStorage.getItem('mntr-cart') || '[]');
+  if (Array.isArray(raw)) {
+    cart = raw
+      .filter(i => i && typeof i.id === 'string' && Number.isInteger(i.qty) && i.qty > 0)
+      .map(i => {
+        const p = PRODS.find(x => x.id === i.id);
+        return p ? {...p, qty: Math.min(i.qty, 99)} : null;
+      })
+      .filter(Boolean);
+  }
+} catch(e) {}
+
+// Save only minimal data: id + qty (not full product objects)
+function saveCart(){
+  try {
+    localStorage.setItem('mntr-cart', JSON.stringify(cart.map(i=>({id:i.id, qty:i.qty}))));
+  } catch(e) {}
+}
+
+function addCart(id){
+  const p = PRODS.find(x => x.id === id);
+  if (!p) return;
+  const ex = cart.find(x => x.id === id);
+  if (ex) ex.qty = Math.min(ex.qty + 1, 99);
+  else cart.push({...p, qty:1});
+  saveCart(); updCart();
+  const b = document.getElementById('bc-'+id);
+  if(b){b.classList.add('ok');b.textContent='✓ Добавлено';setTimeout(()=>{b.classList.remove('ok');b.innerHTML='🛒 В корзину';},2000);}
+}
+function rmCart(id){cart=cart.filter(x=>x.id!==id);saveCart();updCart();}
+function chQty(id,d){
+  const i=cart.find(x=>x.id===id);
+  if(!i)return;
+  i.qty+=d;
+  if(i.qty<=0) rmCart(id);
+  else { i.qty=Math.min(i.qty,99); saveCart(); updCart(); }
+}
+
+function updCart(){
+  const tot = cart.reduce((s,i)=>s+i.price*i.qty, 0);
+  const cnt = cart.reduce((s,i)=>s+i.qty, 0);
+  const dot = document.getElementById('cDot');
+  if(dot){dot.textContent=cnt; cnt>0?dot.classList.add('on'):dot.classList.remove('on');}
+  const items = document.getElementById('cItems');
+  const ft = document.getElementById('cFt');
+  const totEl = document.getElementById('cTot');
+  if(!items||!ft) return;
+  if(!cart.length){
+    items.innerHTML='<div class="cart-empty"><div class="ei">🛒</div><p>Корзина пуста</p></div>';
+    ft.style.display='none';
+  } else {
+    // Use esc() for all dynamic data rendered into HTML
+    items.innerHTML = cart.map(item=>`
+      <div class="ci">
+        <div class="ci-img"><img src="${IMGS[item.img]||''}" alt="${esc(item.name)}" loading="lazy"></div>
+        <div class="ci-info">
+          <h5>${esc(item.name)}</h5>
+          <span>${(item.price*item.qty).toLocaleString('ru')} ₽</span>
+          <div class="ci-ctrl">
+            <button class="qb" onclick="chQty('${esc(item.id)}',-1)">−</button>
+            <span class="qn">${item.qty}</span>
+            <button class="qb" onclick="chQty('${esc(item.id)}',1)">+</button>
+            <button class="ci-rm" onclick="rmCart('${esc(item.id)}')">🗑</button>
+          </div>
+        </div>
+      </div>
+    `).join('');
+    if(totEl) totEl.textContent = tot.toLocaleString('ru')+' ₽';
+    ft.style.display='block';
+  }
+}
+function openCart(){const s=document.getElementById('cSide');const o=document.getElementById('cOv');if(s)s.classList.add('on');if(o)o.classList.add('on');document.body.style.overflow='hidden';}
+function closeCart(){const s=document.getElementById('cSide');const o=document.getElementById('cOv');if(s)s.classList.remove('on');if(o)o.classList.remove('on');document.body.style.overflow='';}
+function toggleCart(){const s=document.getElementById('cSide');if(s&&s.classList.contains('on'))closeCart();else openCart();}
+
+// ── Product Modal ─────────────────────────────────────────────────────────────
+function openMod(id){
+  const p = PRODS.find(x=>x.id===id);
+  if(!p) return;
+  document.getElementById('modContent').innerHTML=`
+    <div class="modal-img-wrap">
+      <img class="modal-img" src="${IMGS[p.img]}" alt="${esc(p.name)}" loading="lazy" decoding="async">
+    </div>
+    <div class="modal-body">
+      <h3>${esc(p.name)}</h3>
+      <div class="modal-vol">${esc(p.vol)}</div>
+      <div class="modal-txt">${p.full}</div>
+      <div class="modal-price-row">
+        <div class="modal-price">${p.price.toLocaleString('ru')} ₽</div>
+        <span style="font-size:12px;color:#7070A0;">${esc(p.proof)}</span>
+      </div>
+      <div class="modal-btns">
+        <button class="btn-cart" onclick="addCart('${esc(p.id)}');closeMod();" style="padding:12px 24px;border-radius:6px;font-size:14px;">🛒 В корзину</button>
+        <button class="btn btn-outline-dark" style="font-size:13px;" onclick="addCart('${esc(p.id)}');closeMod();openCheckout();">Оформить заказ</button>
+      </div>
+    </div>
+  `;
+  const modOv=document.getElementById('modOv');
+  if(modOv)modOv.classList.add('on');
+  document.body.style.overflow='hidden';
+}
+function closeMod(){const modOv=document.getElementById('modOv');if(modOv)modOv.classList.remove('on');document.body.style.overflow='';}
+
+// ── Checkout ──────────────────────────────────────────────────────────────────
+let checkoutBundle = null;
+
+function openCheckout(){
+  checkoutBundle = null;
+  populateCheckoutSummary(cart);
+  showCheckoutStep1();
+}
+
+function openCheckoutBundle(name, price){
+  checkoutBundle = {name, price, qty:1};
+  populateCheckoutSummary([{name, price, qty:1}]);
+  showCheckoutStep1();
+}
+
+function populateCheckoutSummary(items){
+  const el = document.getElementById('coOrderSummary');
+  if(!el) return;
+  if(!items||!items.length){
+    el.innerHTML='<p style="color:#7070A0;font-size:13px;padding:0 28px 16px;">Корзина пуста. Добавьте товары и вернитесь.</p>';
+    return;
+  }
+  const total = items.reduce((s,i)=>s+i.price*(i.qty||1), 0);
+  el.innerHTML=`
+    <div class="co-order">
+      ${items.map(i=>`
+        <div class="co-item">
+          <span>${esc(i.name)}${(i.qty>1)?` × ${i.qty}`:''}</span>
+          <span>${(i.price*(i.qty||1)).toLocaleString('ru')} ₽</span>
+        </div>
+      `).join('')}
+      <div class="co-total"><span>Итого:</span><strong>${total.toLocaleString('ru')} ₽</strong></div>
+    </div>
+  `;
+}
+
+function showCheckoutStep1(){
+  document.getElementById('coStep1').style.display='block';
+  document.getElementById('coStep2').style.display='none';
+  const coOv=document.getElementById('coOv');
+  if(coOv)coOv.classList.add('on');
+  document.body.style.overflow='hidden';
+}
+
+function closeCo(){
+  const coOv=document.getElementById('coOv');
+  if(coOv)coOv.classList.remove('on');
+  document.body.style.overflow='';
+}
+
+function selPay(el,method){
+  document.querySelectorAll('.co-popt').forEach(x=>x.classList.remove('sel'));
+  el.classList.add('sel');
+  document.getElementById('coPayMethod').value=method;
+}
+
+// ── Phone validation ──────────────────────────────────────────────────────────
+function validatePhone(ph){
+  const cleaned = ph.replace(/[\s\-\(\)]/g,'');
+  return /^[\+]?[78]?\d{10}$/.test(cleaned);
+}
+
+// ── Save order to localStorage (history) ─────────────────────────────────────
+function saveOrder(order){
+  try {
+    const orders = JSON.parse(localStorage.getItem('mntr-orders')||'[]');
+    if(Array.isArray(orders)) {
+      orders.push(order);
+      // Keep last 50 orders max
+      if(orders.length>50) orders.splice(0, orders.length-50);
+      localStorage.setItem('mntr-orders', JSON.stringify(orders));
+    }
+  } catch(e) {}
+}
+
+function handleCheckout(e){
+  e.preventDefault();
+  const name     = document.getElementById('coName').value.trim();
+  const phone    = document.getElementById('coPhone').value.trim();
+  const city     = document.getElementById('coCity').value.trim();
+  const delivery = document.getElementById('coDelivery').value;
+  const payment  = document.getElementById('coPayMethod').value;
+
+  if(!name||!phone||!city||!delivery){
+    alert('Пожалуйста, заполните все обязательные поля.');
+    return;
+  }
+  if(name.length < 2){
+    alert('Пожалуйста, введите корректное имя.');
+    return;
+  }
+  if(!validatePhone(phone)){
+    alert('Пожалуйста, введите корректный номер телефона (например: +7 900 000 00 00).');
+    return;
+  }
+
+  const items = checkoutBundle ? [checkoutBundle] : cart;
+  if(!items.length){
+    alert('Корзина пуста. Добавьте товары.');
+    return;
+  }
+
+  const total    = items.reduce((s,i)=>s+i.price*(i.qty||1), 0);
+  const orderNum = 'ML-'+Date.now().toString().slice(-6);
+  const deliveryMap = {cdek:'СДЭК (до ПВЗ)',cdek_courier:'СДЭК (курьер)',post:'Почта России',pickup:'Самовывоз'};
+  const deliveryLabel = deliveryMap[delivery] || 'Не указано';
+
+  // Save order to localStorage for history
+  saveOrder({
+    num:orderNum,
+    date:new Date().toISOString(),
+    name, phone, city,
+    delivery:deliveryLabel, payment,
+    items: items.map(i=>({name:i.name, price:i.price, qty:i.qty||1})),
+    total
+  });
+
+  let payHtml = '';
+  if(payment==='sbp'){
+    // ⚠️ ЗАМЕНИТЕ НА ВАШ НОМЕР ТЕЛЕФОНА ДЛЯ СБП:
+    payHtml=`
+      <div class="co-pay-card">
+        <p><b>Оплата по СБП</b></p>
+        <p>Переведите <b>${total.toLocaleString('ru')} ₽</b> по номеру:</p>
+        <div class="co-pay-num">+7 (___) ___-__-__</div>
+        <p style="font-size:12px;color:#7070A0;margin-top:6px;">⚠️ Укажите ваш номер СБП в файле HTML</p>
+      </div>`;
+  } else if(payment==='card'){
+    // ⚠️ ЗАМЕНИТЕ НА ВАШИ РЕКВИЗИТЫ КАРТЫ:
+    payHtml=`
+      <div class="co-pay-card">
+        <p><b>Оплата по карте</b></p>
+        <p>Переведите <b>${total.toLocaleString('ru')} ₽</b> на карту:</p>
+        <div class="co-pay-num">0000 0000 0000 0000</div>
+        <p style="font-size:12px;color:#7070A0;margin-top:6px;">⚠️ Укажите ваш номер карты в файле HTML</p>
+      </div>`;
+  } else {
+    payHtml=`
+      <div class="co-pay-card">
+        <p><b>Криптовалюта (USDT)</b></p>
+        <p>Напишите нам для получения адреса кошелька. После оплаты пришлите хэш транзакции.</p>
+      </div>`;
+  }
+
+  document.getElementById('coStep1').style.display='none';
+  document.getElementById('coStep2').style.display='block';
+  document.getElementById('coStep2').innerHTML=`
+    <div class="co-confirm">
+      <div class="co-confirm-icon">✓</div>
+      <h3>Заказ оформлен!</h3>
+      <div class="co-order-num">Номер заказа: <b>${esc(orderNum)}</b> · ${esc(deliveryLabel)}</div>
+      ${payHtml}
+      <div class="co-confirm-note">
+        <p>После оплаты отправьте скриншот чека в Telegram с указанием номера заказа <b>${esc(orderNum)}</b>:</p>
+      </div>
+      <div class="co-confirm-actions">
+        <a href="https://t.me/MntrLabs" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Написать @MntrLabs →</a>
+        <button onclick="closeCo()" class="btn btn-outline-dark">Закрыть</button>
+      </div>
+    </div>
+  `;
+
+  // Clear cart after successful order
+  if(!checkoutBundle){
+    cart=[];
+    saveCart();
+    updCart();
+  }
+  checkoutBundle=null;
+}
+
+// HERO SLIDER
+let hCur=0;
+const hSlides=document.querySelectorAll('.hero-slide');
+const hDotsEl=document.getElementById('hDots');
+const hLabelEl=document.getElementById('hLabel');
+if(hDotsEl){
+  hSlides.forEach((_,i)=>{
+    const d=document.createElement('button');
+    d.className='hdot'+(i===0?' on':'');
+    d.onclick=()=>goH(i);
+    hDotsEl.appendChild(d);
+  });
+}
+function goH(n){
+  if(!hSlides.length||!hDotsEl||!hLabelEl)return;
+  hSlides[hCur].classList.remove('on');
+  hDotsEl.children[hCur].classList.remove('on');
+  hCur=(n+hSlides.length)%hSlides.length;
+  hSlides[hCur].classList.add('on');
+  hDotsEl.children[hCur].classList.add('on');
+  const s=hSlides[hCur];
+  const h4=hLabelEl.querySelector('h4');
+  const sp=hLabelEl.querySelector('span');
+  if(h4)h4.textContent=s.dataset.name;
+  if(sp)sp.textContent=s.dataset.vol;
+}
+function nextS(){goH(hCur+1);}
+function prevS(){goH(hCur-1);}
+let hAuto=setInterval(nextS,4500);
+const heroEl=document.getElementById('hero');
+if(heroEl){
+  heroEl.addEventListener('mouseenter',()=>clearInterval(hAuto));
+  heroEl.addEventListener('mouseleave',()=>{hAuto=setInterval(nextS,4500);});
+}
+
+// NAV SCROLL
+window.addEventListener('scroll',()=>{
+  const navEl=document.getElementById('nav');
+  const stickyEl=document.getElementById('sticky');
+  if(navEl)navEl.classList.toggle('sc',window.scrollY>60);
+  if(stickyEl)stickyEl.classList.toggle('on',window.scrollY>600);
+});
+
+// MOBILE MENU
+function toggleMob(){document.getElementById('mobMenu').classList.toggle('op');document.getElementById('burger').classList.toggle('op');}
+function closeMob(){document.getElementById('mobMenu').classList.remove('op');document.getElementById('burger').classList.remove('op');}
+
+// REVEAL
+function initRev(){
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});
+  },{threshold:.1,rootMargin:'0px 0px -30px 0px'});
+  document.querySelectorAll('.rev-el:not(.in)').forEach(el=>obs.observe(el));
+}
+
+// ── YouTube thumbnail player ──────────────────────────────────────────────────
+function playYT(thumbEl, videoId){
+  const wrap = document.createElement('div');
+  wrap.className = 'yt-iframe-wrap';
+  wrap.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+  thumbEl.replaceWith(wrap);
+}
+
+// ── Floating particles in hero ────────────────────────────────────────────────
+function spawnParticles(){
+  const hero = document.getElementById('hero');
+  if(!hero) return;
+  for(let i=0;i<16;i++){
+    const p = document.createElement('div');
+    p.className = 'hero-particle';
+    const size = 2 + Math.random()*5;
+    p.style.cssText = `width:${size}px;height:${size}px;left:${Math.random()*100}%;bottom:0;opacity:${.12+Math.random()*.25};animation-duration:${10+Math.random()*16}s;animation-delay:${-Math.random()*22}s;`;
+    hero.appendChild(p);
+  }
+}
+
+// ── Creatine accordion ───────────────────────────────────────────────────────
+function toggleCr(btn){
+  const item = btn.closest('.cr-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.cr-item').forEach(i=>i.classList.remove('open'));
+  if(!isOpen) item.classList.add('open');
+}
+
+try{renderProds();updCart();initRev();spawnParticles();}catch(e){console.error(e);}
+</script>
+</body>
+</html>
+<!-- deploy Tue Mar 24 17:47:04     2026 -->
