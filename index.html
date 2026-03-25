@@ -480,6 +480,7 @@ footer{background:var(--d-bg1);border-top:1px solid rgba(255,255,255,.05);paddin
   .nav-ul,.nav-r .btn-primary{display:none;}
   .burger{display:flex;}
   .brand-grid,.sgr-grid,.cr-sci-grid{grid-template-columns:1fr;}
+  .rev-el{opacity:1;transform:none;}
   .vals-grid{grid-template-columns:1fr;}
   .val-full{grid-column:span 1;}
   .prods{grid-template-columns:1fr;}
@@ -1496,7 +1497,7 @@ function closeMob(){document.getElementById('mobMenu').classList.remove('op');do
 function initRev(){
   const obs=new IntersectionObserver(entries=>{
     entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});
-  },{threshold:.1,rootMargin:'0px 0px -30px 0px'});
+  },{threshold:0,rootMargin:'0px'});
   document.querySelectorAll('.rev-el:not(.in)').forEach(el=>obs.observe(el));
 }
 
