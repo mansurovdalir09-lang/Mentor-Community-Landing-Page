@@ -1,0 +1,1812 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mentor Community — Закрытое сообщество Ахмада Макеева</title>
+  <meta name="description" content="Закрытое сообщество Ахмада Макеева: экосистема, посвящённая личностному росту, саморазвитию, счастливой и эффективной жизни.">
+  <meta property="og:title" content="Mentor Community">
+  <meta property="og:description" content="Закрытое сообщество Ахмада Макеева для личностного роста и саморазвития.">
+  <meta property="og:type" content="website">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg-dark:    #0D0D0D;
+      --bg-card:    #161622;
+      --bg-card2:   #1E1E2E;
+      --blue:       #4D7EFF;
+      --blue-light: #6B9AFF;
+      --white:      #FFFFFF;
+      --gray:       #8B8B9B;
+      --border:     rgba(255,255,255,0.08);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: #0b0f1e;
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ─── UTILITIES ─── */
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 80px 0; }
+    .section-title {
+      font-size: clamp(30px, 4.5vw, 52px);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .section-subtitle { color: var(--gray); font-size: 15px; margin-bottom: 40px; }
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(77,126,255,0.2);
+    }
+    .card2 {
+      background: var(--bg-card2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 20px;
+    }
+    .blue { color: var(--blue-light); }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+    .btn:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btn-primary {
+      background: linear-gradient(135deg, #4D7EFF 0%, #2563eb 100%);
+      color: #fff;
+      border-radius: 100px;
+      padding: 16px 36px;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      box-shadow: 0 0 0 0 rgba(77,126,255,0);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border-radius: 100px;
+      padding: 16px 36px;
+      border: 1px solid rgba(255,255,255,0.2);
+      backdrop-filter: blur(8px);
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--blue); color: var(--blue-light); }
+    .btn-full { width: 100%; }
+
+    /* ─── SCROLL REVEAL ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(13,13,13,0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    nav.scrolled {
+      border-color: var(--border);
+      box-shadow: 0 4px 32px rgba(0,0,0,0.4);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--white);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--blue-light); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--gray);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--white); }
+    .nav-cta { margin-left: 24px; }
+    .burger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .burger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    .burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .burger.open span:nth-child(2) { opacity: 0; }
+    .burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu {
+      display: none;
+      background: rgba(13,13,13,0.98);
+      padding: 16px 24px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .mobile-menu.open { display: block; }
+    .mobile-menu ul { list-style: none; }
+    .mobile-menu ul li { padding: 12px 0; border-bottom: 1px solid var(--border); }
+    .mobile-menu ul li:last-child { border-bottom: none; }
+    .mobile-menu a { color: var(--white); text-decoration: none; font-size: 16px; font-weight: 500; }
+    .mobile-menu .mobile-cta { margin-top: 16px; }
+
+    /* ─── HERO ─── */
+    #hero {
+      padding-top: 120px;
+      padding-bottom: 80px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .hero-label {
+      display: inline-block;
+      color: var(--gray);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .hero-title {
+      font-size: clamp(42px, 7vw, 72px);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+    .hero-desc {
+      font-size: 17px;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 40px;
+      max-width: 440px;
+    }
+    .hero-buttons { display: flex; flex-direction: column; gap: 12px; max-width: 360px; }
+    .hero-card {
+      background: radial-gradient(ellipse at 55% 35%, #1e2a4a 0%, #131b30 55%, #0d1220 100%);
+      border: 1px solid rgba(77,126,255,0.25);
+      border-radius: 28px;
+      padding: 36px;
+      box-shadow: 0 32px 80px rgba(77,126,255,0.15), 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.08);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='400' viewBox='0 0 500 400'%3E%3Cg stroke='%234D7EFF' fill='none' stroke-width='0.9' opacity='0.22'%3E%3Cpath d='M-50 60 Q80 20 180 70 Q300 130 420 55 Q470 35 560 65'/%3E%3Cpath d='M-50 110 Q80 70 180 120 Q300 180 420 105 Q470 85 560 115'/%3E%3Cpath d='M-50 160 Q80 120 180 170 Q300 230 420 155 Q470 135 560 165'/%3E%3Cpath d='M-50 210 Q80 170 180 220 Q300 280 420 205 Q470 185 560 215'/%3E%3Cpath d='M-50 260 Q80 220 180 270 Q300 330 420 255 Q470 235 560 265'/%3E%3Cpath d='M-50 310 Q80 270 180 320 Q300 380 420 305 Q470 285 560 315'/%3E%3Cpath d='M-50 360 Q80 320 180 370 Q300 430 420 355 Q470 335 560 365'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: cover;
+      background-position: center;
+    }
+    .hero-card > * { position: relative; z-index: 1; }
+    .hero-card-logo {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+    .hero-card-logo span { color: var(--blue-light); }
+    .hero-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+    .hero-features li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--gray);
+    }
+    .hero-features li .check {
+      width: 18px; height: 18px;
+      background: var(--blue);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      font-size: 10px;
+    }
+    .hero-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+    .tag {
+      background: var(--bg-card2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 6px 12px;
+      font-size: 12px;
+      color: var(--gray);
+    }
+    .hero-divider { border: none; border-top: 1px solid var(--border); margin: 16px 0; }
+    .hero-stats { display: flex; flex-direction: column; gap: 8px; }
+    .hero-stat {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--gray);
+    }
+    .hero-stat .dot { width: 8px; height: 8px; background: #22c55e; border-radius: 50%; flex-shrink: 0; }
+    .hero-stat .check-sm { color: var(--blue); font-weight: 700; }
+
+    /* ─── ABOUT ─── */
+    #about .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+    .about-blocks { display: flex; flex-direction: column; gap: 16px; }
+    .about-block {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      font-size: 14px;
+      color: var(--gray);
+      line-height: 1.7;
+    }
+    .about-block strong { color: var(--white); font-weight: 600; }
+    .video-placeholder {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      aspect-ratio: 3/4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      color: var(--gray);
+      cursor: pointer;
+      transition: border-color 0.2s;
+      position: sticky;
+      top: 80px;
+    }
+    .video-placeholder:hover { border-color: var(--blue); }
+    .play-icon {
+      width: 64px; height: 64px;
+      background: var(--blue);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .play-icon::after {
+      content: '';
+      border-left: 24px solid white;
+      border-top: 14px solid transparent;
+      border-bottom: 14px solid transparent;
+      margin-left: 4px;
+    }
+
+    /* ─── BENEFITS ─── */
+    #benefits .benefits-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .benefit-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .benefit-card:hover { border-color: var(--blue); transform: translateY(-3px); }
+    .benefit-icon {
+      font-size: 36px;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .benefit-card h3 { font-size: 15px; font-weight: 600; color: var(--white); }
+
+    /* ─── ACCORDION (content) ─── */
+    #content .content-intro {
+      color: var(--gray);
+      font-size: 15px;
+      margin-bottom: 32px;
+    }
+    .accordion { display: flex; flex-direction: column; gap: 8px; }
+    .accordion-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .accordion-item.open { border-color: rgba(77,126,255,0.35); }
+    .accordion-header {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      text-align: left;
+      gap: 12px;
+      transition: background 0.2s;
+    }
+    .accordion-header:hover { background: rgba(255,255,255,0.03); }
+    .accordion-arrow {
+      width: 24px; height: 24px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      color: var(--blue);
+      transition: transform 0.3s;
+    }
+    .accordion-item.open .accordion-arrow { transform: rotate(180deg); }
+    .accordion-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+    .accordion-item.open .accordion-body { max-height: 4000px; }
+    .accordion-content {
+      padding: 0 20px 20px;
+      color: var(--gray);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+    .acc-module {
+      margin-top: 12px;
+    }
+    .acc-module-title {
+      color: var(--white);
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .acc-module-title .check { color: var(--blue); }
+    .acc-block { margin-left: 16px; margin-bottom: 8px; }
+    .acc-block-title {
+      color: #a0a0b8;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .acc-lessons { list-style: none; margin-left: 16px; }
+    .acc-lessons li {
+      padding: 3px 0;
+      font-size: 13px;
+      color: var(--gray);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .acc-lessons li::before {
+      content: '•';
+      color: var(--blue);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .acc-list { list-style: none; }
+    .acc-list li {
+      padding: 4px 0;
+      font-size: 14px;
+      color: var(--gray);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .acc-list li::before {
+      content: '•';
+      color: var(--blue);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .acc-note {
+      margin-top: 12px;
+      padding: 12px 16px;
+      background: var(--bg-card2);
+      border-radius: 8px;
+      font-size: 13px;
+      color: var(--gray);
+      font-style: italic;
+    }
+
+    /* ─── PRICING ─── */
+    #pricing .pricing-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .pricing-intro { color: var(--gray); font-size: 15px; line-height: 1.7; margin-bottom: 24px; }
+    .pricing-features {
+      list-style: none;
+      margin-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .pricing-features li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+      color: var(--gray);
+    }
+    .pricing-features li .pf-check {
+      color: var(--blue);
+      font-weight: 700;
+      font-size: 16px;
+    }
+    .pricing-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 28px;
+      background: var(--bg-card2);
+      padding: 6px;
+      border-radius: 14px;
+    }
+    .pricing-tab {
+      flex: 1;
+      padding: 12px 16px;
+      border-radius: 10px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--gray);
+      transition: background 0.25s, color 0.25s, transform 0.15s;
+      text-align: center;
+    }
+    .pricing-tab:hover { color: var(--white); }
+    .pricing-tab.active {
+      background: var(--blue);
+      color: #fff;
+      transform: scale(1.02);
+    }
+    .pricing-tab .price-val { display: block; font-size: 20px; font-weight: 700; color: inherit; }
+    .pricing-tab .price-label { display: block; font-size: 11px; font-weight: 400; opacity: 0.75; margin-top: 2px; }
+    .pricing-tab .price-save {
+      display: inline-block;
+      background: rgba(77,126,255,0.2);
+      color: var(--blue-light);
+      font-size: 10px;
+      font-weight: 600;
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-top: 4px;
+    }
+    .pricing-tab.active .price-save {
+      background: rgba(255,255,255,0.2);
+      color: #fff;
+    }
+    .pricing-info {
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+    .pricing-info.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    .pricing-info-text { color: var(--gray); font-size: 14px; line-height: 1.7; margin-bottom: 20px; }
+    .pricing-info-text strong { color: var(--white); }
+
+    /* ─── CTA ─── */
+    #cta-section {
+      padding: 80px 0;
+    }
+    .cta-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 48px 40px;
+      text-align: center;
+    }
+    .cta-card h2 { font-size: clamp(22px, 3.5vw, 32px); font-weight: 700; margin-bottom: 16px; }
+    .cta-card p { color: var(--gray); font-size: 15px; max-width: 600px; margin: 0 auto 36px; line-height: 1.7; }
+    .cta-benefits-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      max-width: 640px;
+      margin: 0 auto 36px;
+      text-align: left;
+    }
+    .cta-benefit {
+      background: var(--bg-card2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 14px;
+      color: var(--gray);
+    }
+    .cta-benefit .cb-icon {
+      width: 20px; height: 20px;
+      background: var(--blue);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      font-size: 11px;
+      margin-top: 1px;
+    }
+    .cta-button-wrap {
+      max-width: 420px;
+      margin: 0 auto;
+    }
+    .cta-note {
+      margin-top: 12px;
+      font-size: 12px;
+      color: var(--gray);
+      text-align: center;
+    }
+
+    /* ─── FAQ ─── */
+    #faq .faq-group { margin-bottom: 32px; }
+    .faq-group-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--blue-light);
+      margin-bottom: 12px;
+      padding-left: 4px;
+    }
+    .faq-accordion { display: flex; flex-direction: column; gap: 6px; }
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .faq-item.open { border-color: rgba(77,126,255,0.3); }
+    .faq-header {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 16px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      text-align: left;
+      gap: 12px;
+      transition: background 0.2s;
+    }
+    .faq-header:hover { background: rgba(255,255,255,0.03); }
+    .faq-arrow {
+      width: 20px; height: 20px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--blue);
+      flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+    .faq-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+    .faq-item.open .faq-body { max-height: 600px; }
+    .faq-answer {
+      padding: 0 18px 16px;
+      color: var(--gray);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--bg-card);
+      border-top: 1px solid var(--border);
+      padding: 60px 0 32px;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1.5fr 1.5fr;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+    .footer-brand-logo {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .footer-brand-logo span { color: var(--blue-light); }
+    .footer-brand p {
+      color: var(--gray);
+      font-size: 13px;
+      line-height: 1.7;
+      max-width: 260px;
+    }
+    .footer-col h4 {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 14px;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col ul li a {
+      color: var(--gray);
+      text-decoration: none;
+      font-size: 13px;
+      transition: color 0.2s;
+    }
+    .footer-col ul li a:hover { color: var(--white); }
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-copy { color: var(--gray); font-size: 13px; }
+    .footer-socials { display: flex; gap: 10px; }
+    .social-link {
+      width: 36px; height: 36px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none;
+      color: var(--gray);
+      font-size: 14px;
+      font-weight: 700;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .social-link:hover { border-color: var(--blue); color: var(--blue-light); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      .section { padding: 60px 0; }
+      nav .nav-links { display: none; }
+      nav .nav-cta { display: none; }
+      .burger { display: flex; }
+      .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+      .hero-title { font-size: 36px; }
+      .hero-buttons { max-width: 100%; }
+      .hero-card { animation: glowPulse 6s ease-in-out infinite; }
+      iframe { border-radius: 12px; }
+      #about .about-grid { grid-template-columns: 1fr; }
+      .video-placeholder { position: static; aspect-ratio: 16/9; }
+      #benefits .benefits-intro { grid-template-columns: 1fr; }
+      .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+      .cta-benefits-grid { grid-template-columns: 1fr; }
+      .cta-card { padding: 32px 20px; }
+      .pricing-tabs { flex-direction: column; }
+      #pricing .pricing-card { padding: 28px 20px; }
+      .footer-top { grid-template-columns: 1fr; gap: 28px; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(32px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes floatCard {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+    @keyframes glowPulse {
+      0%, 100% { box-shadow: 0 0 40px rgba(77,126,255,0.15); }
+      50% { box-shadow: 0 0 80px rgba(77,126,255,0.35); }
+    }
+    .hero-left > * {
+      animation: fadeUp 0.7s ease both;
+    }
+    .hero-left > *:nth-child(1) { animation-delay: 0.1s; }
+    .hero-left > *:nth-child(2) { animation-delay: 0.2s; }
+    .hero-left > *:nth-child(3) { animation-delay: 0.3s; }
+    .hero-left > *:nth-child(4) { animation-delay: 0.4s; }
+    .hero-card {
+      animation: floatCard 6s ease-in-out infinite, glowPulse 6s ease-in-out infinite;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(77,126,255,0.4);
+    }
+    .btn:active { transform: translateY(0px); }
+
+    @media (max-width: 480px) {
+      .benefits-grid { grid-template-columns: 1fr; }
+      .hero-title { font-size: 30px; }
+      .section-title { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAVIGATION ─── -->
+<nav id="main-nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo"><img src="логотип ментор комьюнити.svg" alt="Mentor Community" style="height:32px; display:block"></a>
+      <ul class="nav-links">
+        <li><a href="#content">Программа</a></li>
+        <li><a href="#content">Эфиры</a></li>
+        <li><a href="#benefits">Бады</a></li>
+        <li><a href="#faq">Контакты</a></li>
+      </ul>
+      <a href="https://tribute.tinkoff.ru" target="_blank" class="btn btn-primary nav-cta">Присоединиться →</a>
+      <div class="burger" id="burger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="#content" class="mobile-link">Программа</a></li>
+      <li><a href="#content" class="mobile-link">Эфиры</a></li>
+      <li><a href="#benefits" class="mobile-link">Бады</a></li>
+      <li><a href="#faq" class="mobile-link">Контакты</a></li>
+    </ul>
+    <a href="https://tribute.tinkoff.ru" target="_blank" class="btn btn-primary btn-full mobile-cta">Присоединиться →</a>
+  </div>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section id="hero" class="container">
+  <div class="hero-grid">
+    <div class="hero-left reveal">
+      <span class="hero-label">Что внутри?</span>
+      <h1 class="hero-title">Mentor<br><span class="blue">Community</span></h1>
+      <p class="hero-desc">Закрытое сообщество Ахмада Макеева: экосистема, посвящённая личностному росту, саморазвитию, счастливой и эффективной жизни.</p>
+      <div class="hero-buttons">
+        <a href="https://tribute.tinkoff.ru" target="_blank" class="btn btn-primary btn-full">Присоединиться</a>
+        <a href="#content" class="btn btn-outline btn-full">Узнать программу</a>
+      </div>
+    </div>
+    <div class="hero-right reveal" style="transition-delay:0.15s">
+      <div class="hero-card">
+        <div style="margin-bottom:28px">
+          <div style="font-size:36px; font-weight:800; line-height:1.15; color:#fff; letter-spacing:-0.5px">Mentor</div>
+          <div style="font-size:36px; font-weight:800; line-height:1.15; color:#4D7EFF; letter-spacing:-0.5px">Community</div>
+        </div>
+        <div class="hero-tags" style="margin-bottom:28px">
+          <span class="tag">24 урока WB</span>
+          <span class="tag">Курс Монтаж</span>
+          <span class="tag">Еженедельные эфиры</span>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="flex-shrink:0"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8l-3.19 9.3c-.23.67-1.16.72-1.46.08L10.5 14.5l-3.68-1.49c-.64-.26-.62-1.18.03-1.42l9.3-3.52c.67-.25 1.32.4 1.07 1.07l.42.66z" fill="#4D7EFF"/></svg>
+            более 574 участников комьюнити
+          </div>
+          <div class="hero-stat">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="flex-shrink:0"><path d="M12 2L4 5v6c0 5.25 3.4 10.15 8 11.35C16.6 21.15 20 16.25 20 11V5l-8-3z" fill="none" stroke="#4D7EFF" stroke-width="1.8"/><path d="M9 12l2 2 4-4" stroke="#4D7EFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Гарантия: отмена подписки в любой момент
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ABOUT ─── -->
+<section id="about" class="section">
+  <div class="container">
+    <p class="hero-label" style="margin-bottom:8px">О сообществе</p>
+    <h2 class="section-title reveal">Что такое <span class="blue">Mentor Community?</span></h2>
+    <div class="about-grid">
+      <div class="about-blocks">
+        <div class="about-block reveal" style="transition-delay:0.05s">
+          <strong>Mentor Community</strong> — это закрытое сообщество, где каждый месяц участники прокачивают один конкретный навык: от финансовой грамотности до работы с ИИ, от монтажа видео до торговли на маркетплейсах.
+        </div>
+        <div class="about-block reveal" style="transition-delay:0.1s">
+          В наше время у человека нет проблемы с <strong>доступом к информации</strong>. Информации — переизбыток. Главная проблема — это фильтрация, структуризация и практическое применение знаний в своей жизни.
+        </div>
+        <div class="about-block reveal" style="transition-delay:0.15s">
+          Моя задача как наставника — <strong>погружаться в проблемы</strong> каждого участника, помогать находить решения и выстраивать систему, которая работает именно для него. Не шаблон, а персональный путь.
+        </div>
+        <div class="about-block reveal" style="transition-delay:0.2s">
+          При этом я стремлюсь к тому, чтобы каждый участник <strong>окружал себя правильными людьми</strong> — теми, кто поддерживает, вдохновляет и движется вперёд. Потому что окружение — это и есть среда роста.
+        </div>
+      </div>
+        <a href="https://www.youtube.com/watch?v=VTiFP5eH7Nw" target="_blank" rel="noopener" style="display:block;position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:20px;border:1px solid rgba(255,255,255,0.08);box-shadow:0 20px 60px rgba(0,0,0,0.4);text-decoration:none">
+          <img src="https://i.ytimg.com/vi/VTiFP5eH7Nw/maxresdefault.jpg" alt="Видео об Ахмаде Макееве" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;border-radius:20px">
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.25);border-radius:20px">
+            <div style="width:64px;height:64px;background:#4D7EFF;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(77,126,255,0.5)">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+        </a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── BENEFITS ─── -->
+<section id="benefits" class="section" style="background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="container">
+    <p class="hero-label" style="margin-bottom:8px">Содержание</p>
+    <h2 class="section-title reveal">Что вы получаете внутри <span class="blue">Mentor Community?</span></h2>
+    <div class="benefits-intro">
+      <div class="card2 reveal" style="transition-delay:0.05s; color:var(--gray); font-size:14px; line-height:1.7">
+        Каждый месяц — один фокусный навык. Вы получаете структурированные материалы, уроки, разборы и доступ к экспертному комьюнити, которое помогает внедрять знания в жизнь.
+      </div>
+      <div class="card2 reveal" style="transition-delay:0.1s; color:var(--gray); font-size:14px; line-height:1.7">
+        Внутри сообщества нет хаоса — только систематизированный контент по ключевым направлениям развития современного человека.
+      </div>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card reveal" style="transition-delay:0.05s">
+        <span class="benefit-icon">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="3" y="6" width="30" height="20" rx="3" stroke="#4D7EFF" stroke-width="2"/><path d="M12 32h12M18 26v6" stroke="#4D7EFF" stroke-width="2" stroke-linecap="round"/><path d="M8 14h4M8 18h10" stroke="#4D7EFF" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </span>
+        <h3>Онлайн-заработок</h3>
+      </div>
+      <div class="benefit-card reveal" style="transition-delay:0.1s">
+        <span class="benefit-icon">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><polyline points="4,28 13,18 19,23 32,8" stroke="#4D7EFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="24,8 32,8 32,16" stroke="#4D7EFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <h3>Финансовая грамотность</h3>
+      </div>
+      <div class="benefit-card reveal" style="transition-delay:0.15s">
+        <span class="benefit-icon">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="4" y="7" width="28" height="24" rx="3" stroke="#4D7EFF" stroke-width="2"/><path d="M4 13h28" stroke="#4D7EFF" stroke-width="2"/><path d="M12 4v6M24 4v6" stroke="#4D7EFF" stroke-width="2" stroke-linecap="round"/><rect x="9" y="18" width="5" height="5" rx="1" fill="#4D7EFF" fill-opacity="0.5"/><rect x="16" y="18" width="5" height="5" rx="1" fill="#4D7EFF" fill-opacity="0.3"/><rect x="23" y="18" width="5" height="5" rx="1" fill="#4D7EFF" fill-opacity="0.3"/></svg>
+        </span>
+        <h3>Личная эффективность и продуктивность</h3>
+      </div>
+      <div class="benefit-card reveal" style="transition-delay:0.2s">
+        <span class="benefit-icon">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="10" stroke="#4D7EFF" stroke-width="2"/><circle cx="18" cy="14" r="3" stroke="#4D7EFF" stroke-width="1.8"/><path d="M11 27c0-3.866 3.134-6 7-6s7 2.134 7 6" stroke="#4D7EFF" stroke-width="1.8" stroke-linecap="round"/><path d="M26 6l2-2M28 10h3M24 4v-2" stroke="#4D7EFF" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </span>
+        <h3>Искусственный интеллект</h3>
+      </div>
+      <div class="benefit-card reveal" style="transition-delay:0.25s">
+        <span class="benefit-icon">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="13" stroke="#4D7EFF" stroke-width="2"/><circle cx="18" cy="18" r="5" stroke="#4D7EFF" stroke-width="2"/><path d="M18 5v4M18 27v4M5 18h4M27 18h4" stroke="#4D7EFF" stroke-width="2" stroke-linecap="round"/></svg>
+        </span>
+        <h3>Развитие мягких навыков (soft skills)</h3>
+      </div>
+      <div class="benefit-card reveal" style="transition-delay:0.3s">
+        <span class="benefit-icon">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="7" y="8" width="18" height="23" rx="2" stroke="#4D7EFF" stroke-width="2"/><rect x="11" y="5" width="18" height="23" rx="2" stroke="#4D7EFF" stroke-width="2" fill="var(--bg-card)"/><path d="M15 13h10M15 18h10M15 23h6" stroke="#4D7EFF" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </span>
+        <h3>Читательский клуб</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTENT ACCORDION ─── -->
+<section id="content" class="section">
+  <div class="container">
+    <p class="hero-label" style="margin-bottom:8px">Программа</p>
+    <h2 class="section-title reveal">Контент внутри <span class="blue">Mentor Community</span></h2>
+    <p class="content-intro reveal">11 веток с уроками, курсами, эфирами и материалами — всё структурировано и постоянно пополняется.</p>
+
+    <div class="accordion reveal">
+
+      <!-- ВЕТКА 1 -->
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span>1. Ветка Маркетплейс: Большой курс по торговле на маркетплейсах</span>
+          <span class="accordion-arrow">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-content">
+            <div class="acc-module">
+              <div class="acc-module-title"><span class="check">✓</span> Модуль 1. Выбор товара для продажи</div>
+              <div class="acc-block">
+                <div class="acc-block-title">Блок 1. Выбор ниши на Wildberries</div>
+                <ul class="acc-lessons">
+                  <li>Урок 3. Знакомство с существующими товарными категориями</li>
+                  <li>Урок 7. 7 критериев отбора нужной ниши</li>
+                  <li>Урок 3. Анализ ниш с помощью сервиса MPStats</li>
+                  <li>Урок 3. Анализ ниш с помощью сервиса MPStats</li>
+                </ul>
+              </div>
+              <div class="acc-block">
+                <div class="acc-block-title">Блок 2. Выбор товаров на Wildberries</div>
+                <ul class="acc-lessons">
+                  <li>Урок 4. Анализ характеристик выбранной ниши</li>
+                  <li>Урок 5. SEO-словарь</li>
+                  <li>Урок 6. UNIT-экономика</li>
+                  <li>Урок 7. Выбор нужного товара и конкурентный анализ</li>
+                </ul>
+              </div>
+            </div>
+            <div class="acc-module">
+              <div class="acc-module-title"><span class="check">✓</span> Модуль 2. Запуск выбранного товара в личном кабинете WB</div>
+              <div class="acc-block">
+                <div class="acc-block-title">Блок 1. Введение в личный кабинет WB</div>
+                <ul class="acc-lessons">
+                  <li>Урок 8. Открытие ИП и расчётного счёта</li>
+                  <li>Урок 9. Регистрация личного кабинета WB</li>
+                  <li>Урок 10. Обзор личного кабинета</li>
+                  <li>Урок 11. Создание карточки товара</li>
+                </ul>
+              </div>
+              <div class="acc-block">
+                <div class="acc-block-title">Блок 2. Поставка товара</div>
+                <ul class="acc-lessons">
+                  <li>Урок 12. Поставка товара на склад WB. Часть 1</li>
+                  <li>Урок 12. Поставка товара на склад WB. Часть 2</li>
+                </ul>
+              </div>
+            </div>
+            <div class="acc-module">
+              <div class="acc-module-title"><span class="check">✓</span> Модуль 3. Продвижение товара</div>
+              <div class="acc-block">
+                <div class="acc-block-title">Блок 1. Раздачи</div>
+                <ul class="acc-lessons">
+                  <li>Урок 17. Кластеры на WB и их особенности</li>
+                  <li>Урок 18. Раздачи как вид продвижения</li>
+                  <li>Урок 19. Инструкция к применению и расчёт нужного количества для раздач</li>
+                </ul>
+              </div>
+              <div class="acc-block">
+                <div class="acc-block-title">Блок 2. Внутренняя реклама на WB</div>
+                <ul class="acc-lessons">
+                  <li>Урок 20. Виды рекламных кампаний на WB</li>
+                  <li>Урок 21. Запуск новинок с помощью связки «раздачи + реклама»</li>
+                  <li>Урок 22. Основные метрики для отслеживания</li>
+                </ul>
+              </div>
+            </div>
+            <div class="acc-module">
+              <div class="acc-module-title"><span class="check">✓</span> Модуль 4. Погружение в личный кабинет WB</div>
+              <div class="acc-block">
+                <div class="acc-block-title">Блок 1. Коммуникация с клиентами и поддержкой</div>
+                <ul class="acc-lessons"><li>Урок 23</li></ul>
+              </div>
+              <div class="acc-block">
+                <div class="acc-block-title">Блок 2. Аналитика и отчёты</div>
+                <ul class="acc-lessons"><li>Урок 24</li></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ВЕТКА 2 -->
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span>2. Ветка «Искусственный интеллект»</span>
+          <span class="accordion-arrow">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-content">
+            <div class="acc-module">
+              <div class="acc-module-title"><span class="check">✓</span> Как сразу получить пользу и прочувствовать ИИ</div>
+              <ul class="acc-list">
+                <li>Как установить ChatGPT на телефон</li>
+                <li>Пишем пост на основе отзывов о продукте</li>
+                <li>Анализируем текущие пищевые привычки с ИИ</li>
+                <li>Автоматизация с помощью ИИ</li>
+                <li>Обзор Grok 3 от Илона Маска. Сравнение с ChatGPT</li>
+                <li>Как думает ИИ. Важность правильной формулировки запроса</li>
+                <li>Нейросеть для тех, чья жизнь — созвон за созвоном</li>
+                <li>Применение ИИ в чтении книг</li>
+                <li>Необычный промт по преодолению прокрастинации</li>
+                <li>Итерации как ключ к идеальному ответу</li>
+                <li>Профориентационное интервью с ИИ</li>
+                <li>ИИ-тренер по продажам</li>
+                <li>Почему важно создавать новую тему</li>
+                <li>Составляем резюме с ИИ</li>
+                <li>Полный анализ сайта с помощью нейросети</li>
+                <li>GPT-4.5 — провал или успех</li>
+                <li>Прокачка разговорного английского с нейросетью Sesame</li>
+                <li>Применение ИИ в бытовых задачах</li>
+                <li>Прокачка финансовой грамотности с помощью промта</li>
+                <li>Придумываем уникальные названия для компании или продукта</li>
+                <li>Нейросеть для перевода документов</li>
+                <li>Как не отупеть от ИИ</li>
+                <li>Список полезных ИИ-каналов</li>
+                <li>Курсы по ИИ, которые рекомендую для начала</li>
+                <li>Генерация любых звуков с помощью SFXengine</li>
+                <li>Промт, который покажет, какие книги нужны именно вам</li>
+                <li>Нейросеть переводит видео на 39 языков с сохранением голоса</li>
+                <li>Как парировать любое мнение за 30 секунд</li>
+                <li>Этот ИИ не даёт ответов — он бросает тебе вызов</li>
+              </ul>
+            </div>
+            <div class="acc-module">
+              <div class="acc-module-title"><span class="check">✓</span> Мини-курс по ИИ</div>
+              <ul class="acc-lessons">
+                <li>Урок 1. Последовательные промты</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ВЕТКА 3 -->
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span>3. Ветка «Мои подкасты»</span>
+          <span class="accordion-arrow">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-content">
+            <ul class="acc-list">
+              <li>Иметь свой дом для мужчины</li>
+              <li>Не трать своё время и силы на недозволенных женщин</li>
+              <li>Не стремись получать одобрение от социума</li>
+              <li>Самое главное, от чего нужно изолировать женщин вашей семьи</li>
+              <li>Осознайте скоротечность и конечность жизни</li>
+              <li>То, что не оцифровано, невозможно контролировать</li>
+              <li>Один из главных инструментов инвестирования — семья</li>
+              <li>Наша религия побуждает нас ставить великие цели</li>
+              <li>Важность воспитания своей семьи</li>
+              <li>Выбор жены</li>
+              <li>Что такое красота на самом деле</li>
+              <li>Мой опыт жизни в Медине</li>
+              <li>Проблема чрезмерного инструментария в системе личной эффективности</li>
+              <li>Токсичная продуктивность</li>
+              <li>Парадокс волшебной таблетки</li>
+              <li>Вацок / брат / сват — как точно не нужно давать деньги в инвестиции</li>
+              <li>Пробовать что-то новое в жизни</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ВЕТКА 4 -->
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span>4. Ветка «Digital и онлайн-заработок»</span>
+          <span class="accordion-arrow">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-content">
+            <ul class="acc-list">
+              <li>Как я продаю рекламу на своём канале дорого и без репутационных потерь</li>
+              <li>Структура продающей консультации для продажи любых услуг</li>
+              <li>Таблица поиска и внедрения возможностей для заработка</li>
+            </ul>
+            <div class="acc-module" style="margin-top:16px">
+              <div class="acc-module-title"><span class="check">✓</span> Мини-курс «Основы монтажа» (Спикер: Арслан Махтиев)</div>
+              <ul class="acc-lessons">
+                <li>Урок 1. Основы видеомонтажа</li>
+              </ul>
+            </div>
+            <ul class="acc-list" style="margin-top:12px">
+              <li>Таблица поиска и внедрения возможностей для заработка</li>
+              <li>Урок: Психологические триггеры в продажах</li>
+              <li>Урок: Создание офферов. Обзор на книгу: 100 mln $ оффер + мой путь</li>
+              <li>Структура бесплатной диагностики</li>
+              <li>Структура резюме</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ВЕТКА 5 -->
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span>5. Ветка «Soft Skills»</span>
+          <span class="accordion-arrow">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-content">
+            <ul class="acc-list">
+              <li>Soft Skills. Урок 1. Основы. Roadmap</li>
+              <li>Soft Skills. Урок 2. Навыки для изучения</li>
+              <li>Soft Skills. Урок 3. План освоения любого навыка. Мой метод</li>
+              <li>Soft Skills. Урок 4. Навык эффективного обучения</li>
+              <li>Soft Skills. Урок 5. Публичные выступления и ораторское искусство</li>
+              <li>Soft Skills. Урок 6. Упражнения для развития уверенного голоса</li>
+              <li>Soft Skills. Урок 7. Рекомендации по расширению словарного запаса</li>
+              <li>Чтение без регресса</li>
+              <li>Урок 9: Эффективное чтение. Как извлекать пользу из книг</li>
+              <li>Комментарии к пирамиде Эдгара Дейла. Лучший способ выучить материал</li>
+            </ul>
+            <div class="acc-module" style="margin-top:16px">
+              <div class="acc-module-title"><span class="check">✓</span> Курс по развитию речи, голоса и дикции</div>
+              <ul class="acc-lessons">
+                <li>Урок 1. Дыхание — опора голоса</li>
+                <li>Урок 2. Голос</li>
+                <li>Урок 3. Интонация и подача</li>
+                <li>Урок 4. Дикция и произношение</li>
+                <li>Урок 5. Как сформулировать мысль и донести её</li>
+                <li>Урок 6. Импровизация и фантазия</li>
+                <li>Урок 7. Уверенность в речи</li>
+                <li>Урок 8. Словарный запас</li>
+                <li>Урок 9. Мимика и жесты</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ВЕТКА 6 -->
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span>6. Ветка «Биохакинг»</span>
+          <span class="accordion-arrow">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-content">
+            <ul class="acc-list">
+              <li>Витамин D3</li>
+              <li>Базовый набор добавок</li>
+              <li>Мелатонин</li>
+              <li>Креатин</li>
+              <li>Сиалис</li>
+              <li>NAC</li>
+              <li>L-теанин</li>
+              <li>Польза мёда</li>
+              <li>Глутамин</li>
+              <li>Стек ноотропов под разные задачи</li>
+              <li>Эффективный сон</li>
+              <li>Магний</li>
+              <li>Витамин К2</li>
+              <li>Эффективный сон (расширенный)</li>
+              <li>База по чек-апу для женщин</li>
+              <li>Капельницы для восстановления</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ВЕТКА 7 -->
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span>7. Ветка «Финансовая грамотность»</span>
+          <span class="accordion-arrow">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-content">
+            <ul class="acc-list">
+              <li>Список книг по финансовой грамотности</li>
+              <li>Таблица по доходам на 2025 год</li>
+            </ul>
+            <div class="acc-module" style="margin-top:16px">
+              <div class="acc-module-title"><span class="check">✓</span> Курс «Основы исламских финансов»</div>
+              <ul class="acc-lessons">
+                <li>Предисловие</li>
+                <li>Виды договоров в шариате</li>
+                <li>Основа в торговле — дозволенность</li>
+                <li>Суть договоров исходит из намерений</li>
+                <li>Намерение имеет воздействие на сделку</li>
+                <li>Сделка должна проходить только с согласия сторон</li>
+                <li>Сделка дозволена только в отношении имущества</li>
+                <li>Сделка действительна только со стороны владельца товара</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ВЕТКА 8 -->
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span>8. Ветка «Личная эффективность»</span>
+          <span class="accordion-arrow">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-content">
+            <div class="acc-module">
+              <div class="acc-module-title"><span class="check">✓</span> Инструменты личной эффективности</div>
+              <ul class="acc-lessons">
+                <li>Техника Помодоро</li>
+                <li>Техника одной минуты</li>
+                <li>Техника планирования 1-3-5</li>
+                <li>Матрица Эйзенхауэра</li>
+                <li>Выключи оповещения</li>
+                <li>Как перестать быть рабом телефона</li>
+              </ul>
+            </div>
+            <div class="acc-module">
+              <div class="acc-module-title"><span class="check">✓</span> Уроки</div>
+              <ul class="acc-lessons">
+                <li>Мотивация через призму науки</li>
+                <li>Моя система планирования в TickTick</li>
+                <li>Система GTD на пальцах</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ВЕТКА 9 -->
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span>9. Ветка «Криптовалюта»</span>
+          <span class="accordion-arrow">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-content">
+            <div class="acc-module">
+              <div class="acc-module-title"><span class="check">✓</span> Курс по фундаментальному анализу</div>
+              <ul class="acc-lessons">
+                <li>Первые шаги</li>
+                <li>Погружение в крипту</li>
+                <li>Механика работы биткоина. Часть 1</li>
+                <li>Механика работы биткоина. Часть 2</li>
+                <li>Как оценить криптопроект</li>
+                <li>Как оценить фундаментал проекта</li>
+                <li>Фундаментальные показатели проекта</li>
+                <li>Фундаментальные показатели проекта. Часть 2</li>
+                <li>Риск-менеджмент. Работа с портфелем</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ВЕТКА 10 -->
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span>10. Ветка «Эфиры»</span>
+          <span class="accordion-arrow">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-content">
+            <ul class="acc-list">
+              <li>Эфир №1 — Ответы на вопросы участников комьюнити 15.02.2025</li>
+              <li>Эфир №2 — Ответы на вопросы участников комьюнити 27.02.2025</li>
+              <li>Эфир №3 — Как создать и продвинуть свой онлайн-курс</li>
+              <li>Эфир №4 — Как внедрять привычки в свою жизнь 29.04.2025</li>
+              <li>Эфир №5 — Информация по челленджу + Вопросы и ответы 07.09.2025</li>
+              <li>Эфир №6 — Как фрилансеру находить клиентов на свои услуги 29.09.2025</li>
+              <li>Эфир №7 — Смотрим видео Сергея Романовича 11.10.2025</li>
+              <li>Эфир №8 — Наделяет уделом — только Аллах</li>
+              <li>Эфир №9 — 13 причин увеличения удела согласно Корану и Сунне 17.10.2025</li>
+              <li>Эфир №10 — Эфир по Авито 19.10.2025</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ВЕТКА 11 -->
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span>11. Ветка «Библиотека полезных книг»</span>
+          <span class="accordion-arrow">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-content">
+            <div class="acc-note">
+              📚 Информация доступна только участникам сообщества. Присоединяйтесь, чтобы получить доступ к полной библиотеке.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ДОПОЛНИТЕЛЬНЫЕ ВЕТКИ -->
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span>Дополнительные ветки</span>
+          <span class="accordion-arrow">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-content">
+            <ul class="acc-list">
+              <li>Networking</li>
+              <li>Мои эксперименты</li>
+              <li>Полезное из интернета</li>
+              <li>Диспуты и диалоги</li>
+              <li>Духовность и религия</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /accordion -->
+  </div>
+</section>
+
+<!-- ─── PRICING ─── -->
+<section id="pricing" class="section" style="background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="container">
+    <p class="hero-label" style="margin-bottom:8px">Стоимость</p>
+    <h2 class="section-title reveal" style="text-align:center">Условия участия</h2>
+    <div style="max-width:800px; margin:0 auto">
+      <div class="card reveal" style="padding:40px">
+        <p class="pricing-intro">
+          Участие в Mentor Community оформляется по модели ежемесячной подписки. Вы можете отменить её в любой момент через платформу Tribute — без объяснения причин.
+        </p>
+        <ul class="pricing-features">
+          <li><span class="pf-check">✓</span> Полный доступ ко всем веткам сообщества</li>
+          <li><span class="pf-check">✓</span> Доступ ко всем урокам и курсам</li>
+          <li><span class="pf-check">✓</span> Доступ к новым материалам по мере их добавления</li>
+          <li><span class="pf-check">✓</span> Участие в закрытых эфирах</li>
+          <li><span class="pf-check">✓</span> Общение с сообществом единомышленников</li>
+        </ul>
+        <p style="color:var(--gray); font-size:14px; margin-bottom:16px">Вы можете выбрать удобный срок участия:</p>
+        <div class="pricing-tabs">
+          <button class="pricing-tab active" data-plan="1">
+            <span class="price-val">970 ₽</span>
+            <span class="price-label">1 месяц</span>
+          </button>
+          <button class="pricing-tab" data-plan="6">
+            <span class="price-val">5 000 ₽</span>
+            <span class="price-label">6 месяцев</span>
+            <span class="price-save">Экономия 820 ₽</span>
+          </button>
+          <button class="pricing-tab" data-plan="12">
+            <span class="price-val">9 000 ₽</span>
+            <span class="price-label">12 месяцев</span>
+            <span class="price-save">Экономия 2 640 ₽</span>
+          </button>
+        </div>
+
+        <div class="pricing-info active" data-info="1">
+          <p class="pricing-info-text">
+            <strong>970 ₽ / месяц</strong> — стандартный тариф. Оплачивается ежемесячно. Отменить можно в любой момент.
+          </p>
+          <a href="https://tribute.tinkoff.ru" target="_blank" class="btn btn-primary btn-full">Присоединиться — 970 ₽ / мес</a>
+        </div>
+        <div class="pricing-info" data-info="6">
+          <p class="pricing-info-text">
+            <strong>5 000 ₽ за 6 месяцев</strong> — ~833 ₽/мес. Экономия 820 ₽ по сравнению с помесячной оплатой.
+          </p>
+          <a href="https://tribute.tinkoff.ru" target="_blank" class="btn btn-primary btn-full">Присоединиться — 5 000 ₽ / полгода</a>
+        </div>
+        <div class="pricing-info" data-info="12">
+          <p class="pricing-info-text">
+            <strong>9 000 ₽ за 12 месяцев</strong> — ~750 ₽/мес. Максимальная выгода, экономия 2 640 ₽.
+          </p>
+          <a href="https://tribute.tinkoff.ru" target="_blank" class="btn btn-primary btn-full">Присоединиться — 9 000 ₽ / год</a>
+        </div>
+
+        <p style="color:var(--gray); font-size:13px; margin-top:16px; text-align:center">
+          Оплата проходит через платформу Tribute. Безопасно, легально, с гарантией возврата.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA ─── -->
+<section id="cta-section" class="section">
+  <div class="container">
+    <div class="cta-card reveal">
+      <h2>Присоединяйтесь к <span class="blue">Mentor Community</span></h2>
+      <p>Сообщество, где вы получаете не просто контент, а систему — с поддержкой наставника и единомышленников вокруг.</p>
+      <h3 style="font-size:16px; font-weight:600; margin-bottom:20px; color:var(--gray)">Что вы получаете:</h3>
+      <div class="cta-benefits-grid">
+        <div class="cta-benefit">
+          <span class="cb-icon">✓</span>
+          <span>Структурированную систему развития</span>
+        </div>
+        <div class="cta-benefit">
+          <span class="cb-icon">✓</span>
+          <span>Обратная связь от Ахмада Макеева</span>
+        </div>
+        <div class="cta-benefit">
+          <span class="cb-icon">✓</span>
+          <span>Доступ к большому объёму материалов</span>
+        </div>
+        <div class="cta-benefit">
+          <span class="cb-icon">✓</span>
+          <span>Окружение, которое поддерживает</span>
+        </div>
+      </div>
+      <div class="cta-button-wrap">
+        <a href="https://tribute.tinkoff.ru" target="_blank" class="btn btn-primary btn-full" style="font-size:16px; padding:18px 32px">
+          Присоединиться — 970 ₽ / мес
+        </a>
+        <p class="cta-note">970 ₽ в месяц — это меньше одной чашки кофе в день. Отменить можно в любой момент.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FAQ ─── -->
+<section id="faq" class="section" style="background: var(--bg-card); border-top: 1px solid var(--border);">
+  <div class="container">
+    <p class="hero-label" style="margin-bottom:8px">FAQ</p>
+    <h2 class="section-title reveal">Часто задаваемые вопросы</h2>
+
+    <!-- Группа 1 -->
+    <div class="faq-group reveal">
+      <div class="faq-group-title">Про комьюнити и формат</div>
+      <div class="faq-accordion">
+        <div class="faq-item">
+          <button class="faq-header">
+            <span>Как устроена программа по месяцам (что значит "1 навык в месяц")?</span>
+            <span class="faq-arrow"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <p class="faq-answer">Каждый месяц в сообществе есть фокусная тема или навык. Мы не распыляемся на всё сразу, а глубоко погружаемся в одну область: в один месяц это может быть продуктивность, в другой — ИИ, в третий — финансы. Это помогает реально внедрить знания, а не просто "пройти" материал.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-header">
+            <span>В каком формате выходит контент и как часто?</span>
+            <span class="faq-arrow"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <p class="faq-answer">Контент выходит в формате видеоуроков, подкастов, текстовых материалов и live-эфиров. Периодичность — несколько раз в неделю. Все материалы сохраняются в ветках и доступны в любое время.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-header">
+            <span>Есть ли сезоны? Как часто и что на них происходит?</span>
+            <span class="faq-arrow"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <p class="faq-answer">Да, в сообществе проходят сезонные спринты и челленджи. Это периоды повышенной активности, когда участники работают вместе над конкретной целью. Расписание сезонов объявляется внутри сообщества.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-header">
+            <span>Можно ли участвовать, если мало времени?</span>
+            <span class="faq-arrow"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <p class="faq-answer">Да. Сообщество создано для людей с реальным ритмом жизни. Минимальный формат — 20-30 минут в день. Все записи эфиров сохраняются, поэтому вы ничего не пропустите даже при плотном графике.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Группа 2 -->
+    <div class="faq-group reveal">
+      <div class="faq-group-title">Про участие и доступ</div>
+      <div class="faq-accordion">
+        <div class="faq-item">
+          <button class="faq-header">
+            <span>Когда я получу доступ после оплаты?</span>
+            <span class="faq-arrow"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <p class="faq-answer">Доступ открывается сразу после успешной оплаты — как правило, в течение нескольких минут. На вашу почту придёт письмо с инструкциями по входу.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-header">
+            <span>Где находится контент и как им пользоваться?</span>
+            <span class="faq-arrow"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <p class="faq-answer">Весь контент находится в закрытом Telegram-канале. Ветки организованы как тематические разделы. После вступления вы получаете доступ ко всем веткам сразу и можете изучать в любом порядке.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-header">
+            <span>Что делать, если доступ не пришёл / возникла ошибка?</span>
+            <span class="faq-arrow"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <p class="faq-answer">Свяжитесь с поддержкой через платформу Tribute или напишите в контакт, указанный в подтверждении оплаты. Все технические проблемы решаются в течение 24 часов.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Группа 3 -->
+    <div class="faq-group reveal">
+      <div class="faq-group-title">Про пользу и результат</div>
+      <div class="faq-accordion">
+        <div class="faq-item">
+          <button class="faq-header">
+            <span>Какой результат можно получить за месяц / за 3 месяца?</span>
+            <span class="faq-arrow"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <p class="faq-answer">За 1 месяц — понимание одного ключевого навыка и первые практические шаги. За 3 месяца — заметные изменения в выбранном направлении: рост дохода, повышение продуктивности или уверенность в новой сфере. Результат зависит от вашей вовлечённости.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-header">
+            <span>Нужно ли иметь опыт или можно с нуля?</span>
+            <span class="faq-arrow"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <p class="faq-answer">Можно с нуля. Сообщество рассчитано на людей с разным уровнем подготовки. Материалы объясняются доступным языком, без лишнего усложнения.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-header">
+            <span>Есть ли домашние задания/спринты и обязательно ли их выполнять?</span>
+            <span class="faq-arrow"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <p class="faq-answer">Домашние задания и спринты есть, но они не обязательны. Это инструменты для тех, кто хочет максимально ускорить прогресс. Никто не будет штрафовать за их невыполнение.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-header">
+            <span>Можно ли предлагать темы и задавать вопросы на разборах?</span>
+            <span class="faq-arrow"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <p class="faq-answer">Да, это приветствуется. Участники могут предлагать темы для эфиров и задавать вопросы. Часть эфиров специально посвящена разбору вопросов участников.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Группа 4 -->
+    <div class="faq-group reveal">
+      <div class="faq-group-title">Про оплату и условия</div>
+      <div class="faq-accordion">
+        <div class="faq-item">
+          <button class="faq-header">
+            <span>Какими способами можно оплатить?</span>
+            <span class="faq-arrow"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <p class="faq-answer">Оплата проходит через платформу Tribute. Принимаются банковские карты российских банков, Mir Pay, и другие способы, доступные в Tribute.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-header">
+            <span>Можно ли оплатить в другой валюте?</span>
+            <span class="faq-arrow"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <p class="faq-answer">На данный момент оплата принимается только в рублях через платформу Tribute.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-header">
+            <span>Можно ли вернуть оплату или отменить подписку?</span>
+            <span class="faq-arrow"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <p class="faq-answer">Отменить подписку можно в любой момент через личный кабинет Tribute — без объяснения причин. После отмены доступ сохраняется до конца оплаченного периода. Возврат оплаченных средств осуществляется согласно политике платформы Tribute.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Группа 5 -->
+    <div class="faq-group reveal">
+      <div class="faq-group-title">Про экспертов и комьюнити</div>
+      <div class="faq-accordion">
+        <div class="faq-item">
+          <button class="faq-header">
+            <span>Будут ли приглашённые эксперты?</span>
+            <span class="faq-arrow"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <p class="faq-answer">Да. Периодически в сообщество приходят приглашённые эксперты в своих областях: маркетинг, продажи, монтаж, финансы. Например, курс по монтажу ведёт Арслан Махтиев.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-header">
+            <span>Можно ли выступить с докладом/поделиться опытом?</span>
+            <span class="faq-arrow"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <p class="faq-answer">Да, если у вас есть опыт или экспертиза, которые будут полезны сообществу — напишите об этом. Мы открыты к интересным коллаборациям.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-header">
+            <span>Какие правила внутри комьюнити?</span>
+            <span class="faq-arrow"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <p class="faq-answer">Уважение к участникам и их мнениям, конструктивность в обсуждениях, запрет на спам и саморекламу без согласования. Сообщество строится на взаимной поддержке и честности.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-brand-logo">mntr <span>comm</span></div>
+        <p>Mentor Community — закрытое сообщество Ахмада Макеева, комьюнити для роста через систему и окружение.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Навигация</h4>
+        <ul>
+          <li><a href="#content">Программа</a></li>
+          <li><a href="#content">Эфиры</a></li>
+          <li><a href="#benefits">Бады</a></li>
+          <li><a href="#content">Ветки</a></li>
+          <li><a href="#pricing">Условия</a></li>
+          <li><a href="#faq">Контакты</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Документы</h4>
+        <ul>
+          <li><a href="#">Публичная оферта</a></li>
+          <li><a href="#">Политика конфиденциальности</a></li>
+          <li><a href="#">Согласие на обработку данных</a></li>
+          <li><a href="#">Согласие на рекл. рассылку</a></li>
+          <li><a href="#">Согласие на инф. рассылку</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Контакты</h4>
+        <p style="color:var(--gray); font-size:13px; line-height:1.7">Связь через каналы внутри сообщества.</p>
+        <div style="margin-top:16px">
+          <a href="https://tribute.tinkoff.ru" target="_blank" class="btn btn-primary" style="padding:10px 20px; font-size:13px">Вступить →</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© Mentor Community 2025 &nbsp;·&nbsp; Все права защищены.</p>
+      <div class="footer-socials">
+        <a href="#" class="social-link">ВК</a>
+        <a href="#" class="social-link">TG</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── JAVASCRIPT ─── -->
+<script>
+  // ── Sticky nav shadow
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 10);
+  });
+
+  // ── Burger menu
+  const burger = document.getElementById('burger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      burger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    });
+  });
+
+  // ── Accordion (content)
+  document.querySelectorAll('.accordion-header').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      item.classList.toggle('open');
+    });
+  });
+
+  // ── FAQ accordion
+  document.querySelectorAll('.faq-header').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      // Close others in same group
+      const group = item.closest('.faq-accordion');
+      group.querySelectorAll('.faq-item.open').forEach(open => {
+        if (open !== item) open.classList.remove('open');
+      });
+      item.classList.toggle('open');
+    });
+  });
+
+  // ── Pricing tabs
+  const tabs = document.querySelectorAll('.pricing-tab');
+  const infos = document.querySelectorAll('.pricing-info');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const plan = tab.dataset.plan;
+      tabs.forEach(t => t.classList.remove('active'));
+      infos.forEach(i => i.classList.remove('active'));
+      tab.classList.add('active');
+      document.querySelector(`.pricing-info[data-info="${plan}"]`).classList.add('active');
+    });
+  });
+
+  // ── Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.07 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // ── Active nav link on scroll
+  const sections = document.querySelectorAll('section[id], footer');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const id = e.target.id;
+        navLinks.forEach(a => {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+  sections.forEach(s => sectionObserver.observe(s));
+</script>
+</body>
+</html>
