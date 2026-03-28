@@ -671,11 +671,14 @@
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.35s ease;
-      padding: 16px 20px 20px 20px;
+      padding: 0 20px;
       line-height: 1.75;
       color: rgba(255,255,255,0.65);
     }
-    .faq-item.open .faq-body { max-height: 600px; }
+    .faq-item.open .faq-body {
+      max-height: 600px;
+      padding: 16px 20px 20px;
+    }
     .faq-answer {
       padding: 0 18px 16px;
       color: var(--gray);
