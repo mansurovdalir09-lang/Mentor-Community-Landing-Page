@@ -591,34 +591,6 @@ footer{background:var(--d-bg1);border-top:1px solid rgba(255,255,255,.05);paddin
   </div>
 </section>
 
-<!-- VIDEO -->
-<section class="sec" style="background:var(--d-bg1);padding:72px 0">
-  <div class="wrap">
-    <div class="sec-tag rev-el" style="color:var(--blue)">Видео</div>
-    <h2 class="sec-h2 rev-el" style="color:#F0F0F8;margin-bottom:32px">О нас — <span style="color:var(--blue);">смотри сам</span></h2>
-    <div id="ml-yt-facade" onclick="playMLYT()" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:16px;border:1px solid rgba(255,255,255,0.08);box-shadow:0 20px 60px rgba(0,0,0,0.5);cursor:pointer;background:#000;max-width:860px;margin:0 auto">
-      <img src="https://img.youtube.com/vi/VTiFP5eH7Nw/maxresdefault.jpg" alt="Mentor Labs" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:16px;opacity:0.85">
-      <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px">
-        <div style="width:72px;height:72px;background:rgba(255,0,0,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(0,0,0,0.5)">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
-        </div>
-        <div style="color:#fff;font-size:13px;font-weight:600;letter-spacing:0.05em;text-shadow:0 1px 4px rgba(0,0,0,0.8)">Нажмите для просмотра</div>
-      </div>
-    </div>
-    <script>
-      function playMLYT() {
-        var el = document.getElementById('ml-yt-facade');
-        var iframe = document.createElement('iframe');
-        iframe.src = 'https://www.youtube.com/embed/VTiFP5eH7Nw?autoplay=1&rel=0&modestbranding=1';
-        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-        iframe.allowFullscreen = true;
-        iframe.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;border:0;border-radius:16px';
-        el.innerHTML = '';
-        el.appendChild(iframe);
-      }
-    </script>
-  </div>
-</section>
 
 <!-- SGR — DARK -->
 <section id="sgr" class="sec sec-dark2">
